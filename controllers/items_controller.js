@@ -21,13 +21,13 @@ exports.postAddItem = async (req, res, next) => {
 
 
 //--------------------------------------------- Get all items ------------------------------------
-exports.getAllItems = async (req, res, next) => {
+exports.getAllItems = (req, res, next) => {
     Item.findAll()
     .then(items => {
-        console.log(items)
-        res.sendStatus(200);
+        res.json(items)
     })
     .catch(err => {
-        console.log(error)
+        if(err) return res.status(400).send('ERROR', err)
     })
+    
 };

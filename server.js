@@ -9,6 +9,8 @@ const Cart = require('./models/Cart');
 const CartItem = require('./models/Cart-Item');
 const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');
+const cartRoute = require('./routes/cart');
+
 dotenv.config();
 
 
@@ -26,6 +28,7 @@ db.authenticate()
 // Item.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 // User.hasMany(Item);
 // User.hasOne(Cart);
+User.hasMany(Cart);
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
 Cart.belongsToMany(Item, { through: CartItem });
 Item.belongsToMany(Cart, { through: CartItem });
@@ -36,7 +39,8 @@ Item.belongsToMany(Cart, { through: CartItem });
 //---------------------------------------Route Middleware --------------------------------------------
 app.use(cors());
 app.use('/user', userRoute);
-app.use('/product', itemRoute);
+app.use('/shop', itemRoute);
+app.use('/cart', cartRoute);
 
 
 const PORT = process.env.PORT || 5000;
