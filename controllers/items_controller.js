@@ -2,7 +2,7 @@ const Item = require('../models/Item');
 
 
 
-//--------------------------------------------- Add Item -----------------------------------------
+//--------------------------------------------- Create Item -----------------------------------------
 exports.postAddItem = async (req, res, next) => {
     const newItem = new Item({
         item_type: req.body.item_type,

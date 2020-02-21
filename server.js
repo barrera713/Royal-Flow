@@ -10,6 +10,7 @@ const CartItem = require('./models/Cart-Item');
 const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');
 const cartRoute = require('./routes/cart');
+const cartItem = require('./routes/cartItems');
 
 dotenv.config();
 
@@ -25,13 +26,11 @@ db.authenticate()
 
 
 //---------------------------------------- Sync Database Models-------------------------------------
-// Item.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
-// User.hasMany(Item);
-// User.hasOne(Cart);
 User.hasMany(Cart);
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
 Cart.belongsToMany(Item, { through: CartItem });
 Item.belongsToMany(Cart, { through: CartItem });
+
 
 // db.sync({ force: true });
 
@@ -41,6 +40,7 @@ app.use(cors());
 app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', cartRoute);
+app.use('/cart-item', cartItem);
 
 
 const PORT = process.env.PORT || 5000;
