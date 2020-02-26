@@ -1,5 +1,6 @@
 import { LOGIN } from './Types';
 import axios from 'axios';
+import history from '../history';
 
 const URL = 'http://localhost:5000';
 
@@ -14,6 +15,7 @@ export const loginUser = (formData) => (dispatch) => {
             payload: res
         })
     })
+    .then( history.push('/'))
     .catch(err => {
         if(err) {
             console.log('POOPIE', err.response)

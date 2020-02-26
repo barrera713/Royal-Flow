@@ -29,6 +29,9 @@ function NavBar() {
           <li className="nav-item">
             <Link to="/signup" className="nav-link">Sign Up</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/cart" className="nav-link">Cart</Link>
+          </li>
         </ul>
       </span>
     </div>
