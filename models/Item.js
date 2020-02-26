@@ -23,6 +23,10 @@ const Item = db.define('item', {
     description: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    sneakerSize: {
+        type: Sequelize.STRING,
+        allowNull: true
     }
 });
 
