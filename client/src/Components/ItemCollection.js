@@ -13,7 +13,6 @@ class ItemCollection extends React.Component {
 
   
   render() {
-    console.log(this.props.items)
 
     if(this.props.items === undefined) {
       return <h3>Loading...</h3>
