@@ -23,7 +23,7 @@ exports.postAddUser = async (req, res, next) => {
 
 exports.loginUser = async (req, res, next) => {
 //---------------------------------------- Finds User in database by Username ------------------------------
-    const user = await User.findOne({ where: { username: req.body.username }});
+    const user = await User.findOne({ where: { email: req.body.email }});
 
     if(!user) return res.status(400).send('Username or password is incorrect');
 
@@ -35,7 +35,7 @@ exports.loginUser = async (req, res, next) => {
 //---------------------------------------------- Signs Token --------------------------------------------
     const token = jwt.sign({ _id: user._id }, process.env.USER_TOKEN );
     res.send({'Bearer': token });
-}
+};
 
 
 

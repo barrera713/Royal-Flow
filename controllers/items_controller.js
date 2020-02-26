@@ -8,8 +8,9 @@ exports.postAddItem = async (req, res, next) => {
         item_type: req.body.item_type,
         price: req.body.price,
         imageUrl: req.body.imageUrl,
-        description: req.body.description
-    })
+        description: req.body.description,
+        sneakerSize: req.body.sneakerSize
+    });
     try {
         const savedItem = await newItem.save();
         res.send({ savedItem });

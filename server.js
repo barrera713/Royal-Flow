@@ -16,7 +16,7 @@ dotenv.config();
 
 
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 
 // -------------------------------------- Test Database Connection---------------------------------
