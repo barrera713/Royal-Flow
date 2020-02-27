@@ -12,7 +12,7 @@ class Login extends React.Component {
             "email": e.target["email"].value,
             "password": e.target["password"].value
         }
-        console.log('inside loginForm', formData)
+        // console.log('inside loginForm', formData)
         this.props.loginUser(formData);
     }
 

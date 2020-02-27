@@ -6,7 +6,12 @@ class Cart extends React.Component{
 
     handleLogin = () => {
         history.push('/login')
-    }
+    };
+
+    handleSignUp = () => {
+        history.push('/signup')
+    };
+
 
     render() {
 
@@ -19,7 +24,7 @@ class Cart extends React.Component{
                     <button className="btn btn-primary btn-lg" onClick={this.handleLogin}>Login</button>
                 </li>
                 <li>
-                    <button className="btn btn-primary btn-lg">Sign Up</button>
+                    <button className="btn btn-primary btn-lg" onClick={this.handleSignUp}>Sign Up</button>
                 </li>
             </ul>
         </div>)
