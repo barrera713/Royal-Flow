@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import history from '../history';
 
 
 const handleLogOut = () => {
-  sessionStorage.clear()
   window.location = '/'
+  sessionStorage.clear()
 }
 
 
 function NavBar() {
-
+//----------------------------------------------- Checks for user auth ----------------------------------------------------------------------
   let userLoggedIn = sessionStorage.getItem('Bearer');
-  console.log('POOP', userLoggedIn)
 
   return( <div className="App">
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,6 +33,7 @@ function NavBar() {
     <span className="navbar-text">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
+{/* -----------------------------------Ternary for user Login/Logout ------------------------------------------------------------------- */}
           { !userLoggedIn ? <Link to="/login" className="nav-link">Login</Link> :
           <Link onClick={() => handleLogOut()} className="nav-link">Log Out</Link>}
         </li>

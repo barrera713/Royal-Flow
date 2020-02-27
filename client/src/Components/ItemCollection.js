@@ -18,6 +18,8 @@ class ItemCollection extends React.Component {
       return <h3>Loading...</h3>
     }
     
+    console.log(this.props.items)
+
     return (<div className="row row-cols-1 row-cols-md-3">
       {this.props.items.map(i => {
         return <ItemCard item={i} />

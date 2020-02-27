@@ -12,14 +12,21 @@
 /*----------------------------------------- Item Card ---------------------------------------------------*/
 .col.mb-4 {
   margin: 0;
-  padding: 0 5px;
+  padding: 0 20px;
 }
+
+.card-img-top {
+  max-height: 575px;
+  width: auto;
+}
+
 /*-------------------------------------------------- Login Form -----------------------------------------*/
 .login-form {
   margin: 0 auto;
   width: 35%
 }
 
+/*-----------------------------------------------Cart for no auth user -----------------------------------*/
 .cart-no-user {
   margin: 0 auto;
   padding: 50px 0;
@@ -39,10 +46,21 @@
 }
 
 
+/*----------------------------------------------------- Auth User Cart ----------------------------------------*/
+
+
+.cart-ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 30px;
+}
+
 
 
 
 @media screen and (max-width: 992px) {
+
+  /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
 
   .cart-no-user {
     margin: 0 auto;
@@ -63,4 +81,14 @@
     width: 100%;
   }
 
+  /*-----------------------------------------Card Item ------------------------------------------------------------*/
+  .card-img-top {
+    height: auto;
+    width: 100%;
+  }
+
+  .col.mb-4 {
+    margin: 0;
+    padding: 0 5px;
+  }
 }
