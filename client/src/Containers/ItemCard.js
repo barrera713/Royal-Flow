@@ -1,13 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addItem } from '../Actions/ActiveCart';
 
 const ItemCard = (props) => {
 
     const { item } = props;
 
-    const addItem = (item) => {
-        // Currently only adds one Item to local storage
-        const addedItem = JSON.stringify(item)
-        localStorage.setItem('item', addedItem)
+    const handleAddItem = (item) => {
+       props.addItem(item);
     }
 
     return(<div className="col mb-4" key={item.id}>
@@ -16,11 +16,11 @@ const ItemCard = (props) => {
             <div className="card-body">
             <h5 className="card-title">${item.price}</h5>
             <p className="card-text">{item.description}</p>
-            <button onClick={() => {addItem(item)}} className="btn btn-primary">Add to Cart</button>
+            <button onClick={() => handleAddItem(item)} className="btn btn-primary">Add to Cart</button>
             </div>
         </div>
     </div>)
 };
 
-export { ItemCard };
+export default connect(null, { addItem })(ItemCard);
 
