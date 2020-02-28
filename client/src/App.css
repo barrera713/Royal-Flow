@@ -46,15 +46,35 @@
 }
 
 
-/*----------------------------------------------------- Auth User Cart ----------------------------------------*/
+/*----------------------------------------------------- Active Cart ----------------------------------------*/
 
 
-.cart-ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 0 30px;
+.container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
+.item-img {
+  width: 25%;
+  height: 100%;
+}
+
+.item-img img {
+  width: 150px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.item-description {
+  width: 50%;
+  height: 100%;
+}
+
+.item-price {
+  width: 25%;
+  height: 100%;
+}
 
 
 
@@ -81,7 +101,7 @@
     width: 100%;
   }
 
-  /*-----------------------------------------Card Item ------------------------------------------------------------*/
+  /*----------------------------------------- Item Card ------------------------------------------------------------*/
   .card-img-top {
     height: auto;
     width: 100%;
@@ -91,4 +111,34 @@
     margin: 0;
     padding: 0 5px;
   }
+
+  /*--------------------------------------- Active Cart --------------------------------------- */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+
+  .item-img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-description {
+    width: 100%;
+  }
+
+  .item-price {
+    width: 100%;
+  }
+
+  .item-img img {
+    width: 175px;
+    height: 250px;
+    padding-bottom: 20px;
+  }
+
+
 }

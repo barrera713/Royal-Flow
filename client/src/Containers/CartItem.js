@@ -1,26 +1,29 @@
 import React from 'react';
 
 
-export default function CartItem() {
+const CartItem = (props) => {
+
+    const { item } = props;
+
+    console.log('props', item)
 
     return(<div className="card">
         <div className="card-body">
-            <ul className="cart-ul">
-                <li>
-                    <img src="" alt="..."/>
-                </li>
-                <li>
-                    <p>Description</p>
-                </li>
-                <li>
+            <div className="container">
+                <div className="item-img">
+                    <img src={item.imageUrl} className="cartItem-img" alt="..."/>
+                </div>
+                <div className="item-description">
+                    <p>{item.description}</p>
                     <p>Qty</p>
-                </li>
-                <li>
-                    <p>Price</p>
-                </li>
-            </ul>
+                </div>
+                <div className="item-price">
+                    <p>${item.price}</p>
+                </div>
+            </div>
         </div>
     </div>)
-
 }
+
+export default CartItem
 
