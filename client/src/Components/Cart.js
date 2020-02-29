@@ -8,26 +8,46 @@ class Cart extends React.Component{
 
 
     render() {
-// ------------------------ Checks if User is logged in -------------------------------------------
+    // ------------------------ Checks for User auth -------------------------------------------
         const userLoggedIn = sessionStorage.getItem('Bearer');
 
+        
         console.log('CART DATA', this.props.cart)
-
+        // ---------------- Render LoggedOutCart if token is not available
         if(!userLoggedIn) {
         return(<LoggedOutCart />)
         }
-// -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
+        
+        //----------- Funciton to remove any duplicate objects in the cart array -------------------------------------------------------
+        const deleteDuplicate = (cartArr) => {
+            let table = {};
+            let uniqArr = [];
+            for(let i = 0; i < cartArr.length; i++) {
+                if(!table[cartArr[i].id]) {
+                    table[cartArr[i].id] = true;
+                    uniqArr.push(cartArr[i])
+                }
+            }
+            return uniqArr
+        }
+        
+        const uniqCart = deleteDuplicate(this.props.cart);
+       
+        
+
+        // -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
         if(this.props.cart.length === 0 && userLoggedIn) {
             return<div>
                 <h4>Your Royal cart is empty.</h4>
             </div>
         } else { 
-            return(this.props.cart.map(i => {
+            return(uniqCart.map(i => {
                 return(<CartItem item={i} />)
             }))
         }
     }
 }
+
 
 const mapStateToProps = state => ({
     cart: state.cart.cartItems
