@@ -14,8 +14,8 @@ const ItemCard = (props) => {
         <div className="card h-100">
             <img src={item.imageUrl} className="card-img-top" alt="..." />
             <div className="card-body">
-            {item.sneakerSize ? <h5 className="card-title">${item.price} | Size {item.sneakerSize}</h5> : <h5 className="card-title">${item.price} </h5>}
             <p className="card-text">{item.description}</p>
+            <p>Size {item.size} | Price ${item.price}</p>
             <button onClick={() => handleAddItem(item)} className="btn btn-primary">Add to Cart</button>
             </div>
         </div>

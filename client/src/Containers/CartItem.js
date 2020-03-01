@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { incrementItem } from '../Actions/ActiveCart';
+import { incrementItem, decrementItem } from '../Actions/ActiveCart';
 
 
 const CartItem = (props) => {
@@ -8,11 +8,14 @@ const CartItem = (props) => {
     const { item } = props;
     console.log('PROOOOPPSSSSSS', item)
 
-    const testing = (clickedItem) => {
-        // let addCount = props.item.qty = clickedItem.qty + 1
-        // console.log(addCount)
+    const handleIncrement = (clickedItem) => {
         console.log('ADDD COUNT INSIDE TESTING', clickedItem)
         props.incrementItem(clickedItem)
+    }
+
+    const handleDecrement = (clickedItem) => {
+        console.log('INSIDE DECREMENT');
+        props.decrementItem(clickedItem)
     }
 
     return(
@@ -25,8 +28,8 @@ const CartItem = (props) => {
                 <div className="item-description">
                     <p>{item.description}</p>
                     <p>Qty: {item.quantity}</p>
-                    <button type="button" className="btn btn-primary btn-sm" onClick={ () => testing(item)}>+</button>
-                    <button type="button" className="btn btn-secondary btn-sm">-</button>
+                    <button type="button" className="btn btn-primary btn-sm" onClick={ () => handleIncrement(item)}>+</button>
+                    <button type="button" className="btn btn-secondary btn-sm" onClick={ () => handleDecrement(item)}>-</button>
                 </div>
                 <div className="item-price">
                     <p>${props.item.price}</p>
@@ -37,5 +40,5 @@ const CartItem = (props) => {
 }
 
 
-export default connect(null, { incrementItem })(CartItem);
+export default connect(null, { incrementItem, decrementItem })(CartItem);
 

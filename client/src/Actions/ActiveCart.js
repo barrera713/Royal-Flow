@@ -1,5 +1,5 @@
 import { ADDITEM } from './Types';
-import { INCREMENT } from './Types';
+import { INCREMENT, DECREMENT } from './Types';
 
 export const addItem = (item) => (dispatch) => {
     dispatch({ 
@@ -10,9 +10,15 @@ export const addItem = (item) => (dispatch) => {
 
 
 export const incrementItem = (item) => (dispatch) => {
-    console.log('INSIDEEEEEE ACTION', item)
     dispatch({
         type: INCREMENT,
+        payload: item
+    })
+};
+
+export const decrementItem = (item) => (dispatch) => {
+    dispatch({
+        type: DECREMENT,
         payload: item
     })
 };
