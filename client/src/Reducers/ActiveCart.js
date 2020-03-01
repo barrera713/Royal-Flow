@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
         return {
             ...state,
             cartItems: state.cartItems.map(item => {if(item.id === action.payload.id) return {
-                ...item, quantity: item.quantity -1
+                ...item, quantity: item.quantity === 0 ? item.quantity = 0 : item.quantity - 1
             }
             return item })
         }
