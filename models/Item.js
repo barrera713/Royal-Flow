@@ -16,6 +16,10 @@ const Item = db.define('item', {
         type: Sequelize.DOUBLE,
         allowNull: false
     },
+    quantity: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
     imageUrl: {
         type: Sequelize.STRING,
         allowNull: false
@@ -24,7 +28,7 @@ const Item = db.define('item', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    sneakerSize: {
+    size: {
         type: Sequelize.STRING,
         allowNull: true
     }

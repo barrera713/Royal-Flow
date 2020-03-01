@@ -18,7 +18,7 @@ class Cart extends React.Component{
         return(<LoggedOutCart />)
         }
         
-        //----------- Funciton to remove any duplicate objects in the cart array -------------------------------------------------------
+        //----------- Funciton to remove duplicate objects in the cart array -------------------------------------------------------
         const deleteDuplicate = (cartArr) => {
             let table = {};
             let uniqArr = [];
@@ -30,10 +30,8 @@ class Cart extends React.Component{
             }
             return uniqArr
         }
-        
-        const uniqCart = deleteDuplicate(this.props.cart);
-       
-        
+
+        const uniqCart = deleteDuplicate(this.props.cart); 
 
         // -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
         if(this.props.cart.length === 0 && userLoggedIn) {

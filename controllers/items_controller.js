@@ -8,6 +8,7 @@ exports.postAddItem = async (req, res, next) => {
         item_type: req.body.item_type,
         price: req.body.price,
         imageUrl: req.body.imageUrl,
+        quantity: req.body.quantity,
         description: req.body.description,
         sneakerSize: req.body.sneakerSize
     });
