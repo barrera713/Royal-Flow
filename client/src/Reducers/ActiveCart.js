@@ -7,6 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
+
         case ADDITEM:
         console.log('INSIDE REDUCER')
         return {

@@ -6,7 +6,7 @@ import { incrementItem, decrementItem } from '../Actions/ActiveCart';
 const CartItem = (props) => {
 
     const { item } = props;
-    console.log('PROOOOPPSSSSSS', item)
+    console.log('PROOOOPPSSSSSS', )
 
     const handleIncrement = (clickedItem) => {
         console.log('ADDD COUNT INSIDE TESTING', clickedItem)
@@ -36,8 +36,11 @@ const CartItem = (props) => {
                 </div>
             </div>
         </div>
-    </div>)
+    </div>
+    )
 }
+
+
 
 
 export default connect(null, { incrementItem, decrementItem })(CartItem);
