@@ -1,5 +1,5 @@
 import { ADDITEM } from './Types';
-import { INCREMENT, DECREMENT } from './Types';
+import { INCREMENT, DECREMENT, REMOVEITEM } from './Types';
 
 export const addItem = (item) => (dispatch) => {
     dispatch({ 
@@ -8,6 +8,12 @@ export const addItem = (item) => (dispatch) => {
     })
 };
 
+export const removeItem = (item) => (dispatch) => {
+    dispatch({
+        type: REMOVEITEM,
+        payload: item
+    })
+};
 
 export const incrementItem = (item) => (dispatch) => {
     dispatch({
@@ -22,3 +28,4 @@ export const decrementItem = (item) => (dispatch) => {
         payload: item
     })
 };
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { incrementItem, decrementItem } from '../Actions/ActiveCart';
+import { incrementItem, decrementItem, removeItem } from '../Actions/ActiveCart';
 
 
 const CartItem = (props) => {
@@ -8,14 +8,19 @@ const CartItem = (props) => {
     const { item } = props;
     console.log('PROOOOPPSSSSSS', )
 
-    const handleIncrement = (clickedItem) => {
-        console.log('ADDD COUNT INSIDE TESTING', clickedItem)
-        props.incrementItem(clickedItem)
+    const handleIncrement = (item) => {
+        // console.log('ADDD COUNT INSIDE TESTING', item)
+        props.incrementItem(item)
     }
 
-    const handleDecrement = (clickedItem) => {
-        console.log('INSIDE DECREMENT');
-        props.decrementItem(clickedItem)
+    const handleDecrement = (item) => {
+        // console.log('INSIDE DECREMENT');
+        props.decrementItem(item)
+    }
+
+    const handleRemove = (item) => {
+        console.log('INSIDE REMOVE')
+        props.removeItem(item)
     }
 
     return(
@@ -27,7 +32,14 @@ const CartItem = (props) => {
                 </div>
                 <div className="item-description">
                     <p>{item.description}</p>
-                    <p>Qty: {item.quantity}</p>
+                    <ul>
+                        <li>
+                            <p>Qty: {item.quantity}</p>
+                        </li>
+                        <li id="remove-item" onClick={() => handleRemove(item)}>
+                            <p>Delete</p>
+                        </li>
+                    </ul>
                     <button type="button" className="btn btn-primary btn-sm" onClick={ () => handleIncrement(item)}>+</button>
                     <button type="button" className="btn btn-secondary btn-sm" onClick={ () => handleDecrement(item)}>-</button>
                 </div>
@@ -43,5 +55,5 @@ const CartItem = (props) => {
 
 
 
-export default connect(null, { incrementItem, decrementItem })(CartItem);
+export default connect(null, { incrementItem, decrementItem, removeItem })(CartItem);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCard from '../Containers/ItemCard';
+import ItemCard from '../Components/ItemCard';
 import { connect } from 'react-redux';
 import { getAllItems } from '../Actions/Item';
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
-import { NavBar } from './Components/NavBar';
-import ItemCollection from './Components/ItemCollection';
-import { SignUp } from './Components/SignUp';
-import Login  from './Components/Login';
-import Cart from './Components/Cart';
+import { NavBar } from './Containers/NavBar';
+import ItemCollection from './Containers/ItemCollection';
+import { SignUp } from './Containers/SignUp';
+import Login  from './Containers/Login';
+import Cart from './Containers/Cart';
 
 import './App.css';
 

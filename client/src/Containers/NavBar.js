@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import history from '../history';
 
 
 const handleLogOut = () => {
   window.location = '/'
   sessionStorage.clear()
+}
+
+const handleHome = () => {
+  history.push('/')
 }
 
 
@@ -14,7 +19,7 @@ function NavBar() {
 
   return( <div className="App">
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="/"><h4>Royal Flow</h4></a>
+  <Link className="navbar-brand" onClick={() => handleHome()}><h4>Royal Flow</h4></Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

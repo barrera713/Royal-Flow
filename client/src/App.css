@@ -76,6 +76,16 @@
   height: 100%;
 }
 
+.item-description ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 5px;
+}
+
+#remove-item {
+  cursor: pointer;
+  font-size: 12px;
+}
 
 
 @media screen and (max-width: 992px) {

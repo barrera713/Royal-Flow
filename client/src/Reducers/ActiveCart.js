@@ -1,4 +1,4 @@
-import { ADDITEM, INCREMENT, DECREMENT } from '../Actions/Types';
+import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM } from '../Actions/Types';
 
 const initialState = {
     cartItems: []
@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
         return {
             ...state,
             cartItems: [...state.cartItems, action.payload]
+        };
+        case REMOVEITEM: 
+        return {
+            ...state,
+            cartItems: state.cartItems.filter(item => item !== action.payload ) 
         };
         case INCREMENT:  
         return {
