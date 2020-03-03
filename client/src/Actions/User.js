@@ -4,10 +4,22 @@ import axios from 'axios';
 
 const URL = 'http://localhost:5000';
 
-export const loginUser = (formData) => {
+// -------------------- Create User Post Request --------------------
+export const createUser = async (formData) => {
+    try {
+        await axios.post(`${URL}/user/new`, formData,
+        {headers: {'Accept': 'application/json'}})
+        .then( window.location = '/login')
+    } catch (err) {
+        console.log(err)
+    }
+}
 
+
+
+// -------------------- Login Post Request ---------------------------
+export const loginUser = (formData) => {
     return async (dispatch) => {    
-   
         try {
             await axios.post(`${URL}/user/login`, formData,
             {headers: {'Accept': 'application/json'}})
@@ -22,8 +34,8 @@ export const loginUser = (formData) => {
         } catch(err) {
             console.log(err)
         };
-
-    }
-    
+    }  
 }
+
+
 

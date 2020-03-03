@@ -3,7 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 import { NavBar } from './Containers/NavBar';
 import ItemCollection from './Containers/ItemCollection';
-import { SignUp } from './Containers/SignUp';
+import SignUp from './Containers/SignUp';
 import Login  from './Containers/Login';
 import Cart from './Containers/Cart';
 

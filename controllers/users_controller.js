@@ -8,7 +8,6 @@ exports.postAddUser = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(req.body.password, 12)
 
     const newUser = new User({
-        username: req.body.username,
         email: req.body.email,
         password: hashedPassword
     })
