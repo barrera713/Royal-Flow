@@ -23,7 +23,7 @@ class SneakerCollection extends React.Component {
     let sneakers = this.props.items.filter(i => i.item_type === "sneakers");
     return(<div className="row row-cols-1 row-cols-md-3">
        {sneakers.map(sneaker => {
-           return (<ItemCard item={sneaker}/>)
+          return (<ItemCard item={sneaker}/>)
        })}
     </div>)
   };

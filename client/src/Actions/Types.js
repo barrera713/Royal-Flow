@@ -8,3 +8,5 @@ export const ADDITEM = "ADDITEM";
 export const REMOVEITEM = "REMOVEITEM"
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
+// ----------------------------- User Search Input ------------------------
+export const USERINPUT = "USERINPUT";
