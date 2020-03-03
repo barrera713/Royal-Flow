@@ -1,5 +1,5 @@
 //---------------------------- Data Types --------------------------------
-export const FETCHDATA = "FETCHDATA";
+export const ALLDATA = "ALLDATA";
 //---------------------------- User Types --------------------------------
 export const SIGNUP = "SIGNUP";
 export const LOGIN = "LOGIN";

@@ -12,6 +12,17 @@ const handleHome = () => {
   history.push('/')
 }
 
+const handleSneakerPage = () => {
+  history.push('/sneakers')
+}
+
+const handleShirtPage = () => {
+  history.push('/tops')
+}
+
+const handleAccessoriesPage = () => {
+  history.push('/accessories')
+}
 
 function NavBar() {
 //----------------------------------------------- Checks for user auth ----------------------------------------------------------------------
@@ -26,13 +37,13 @@ function NavBar() {
   <div className="collapse navbar-collapse" id="navbarText">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <a className="nav-link" href="/">Sneakers <span className="sr-only">(current)</span></a>
+        <Link className="nav-link" onClick={() => handleSneakerPage()}>Sneakers <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">Tops</a>
+        <Link className="nav-link" onClick={() => handleShirtPage()}>Tops</Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">Accessories</a>
+      <Link className="nav-link" onClick={() => handleAccessoriesPage()}>Accessories</Link>
       </li>
     </ul>
     <span className="navbar-text">

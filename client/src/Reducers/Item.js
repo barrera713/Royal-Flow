@@ -1,4 +1,4 @@
-import { FETCHDATA } from '../Actions/Types';
+import { ALLDATA } from '../Actions/Types';
 
 const initialState = {
     allItems: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case FETCHDATA:
+        case ALLDATA:
             console.log('Inside data reducer')
         return {
             ...state,
