@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import history from '../history';
+import { connect } from 'react-redux';
 
 
 const handleLogOut = () => {
@@ -24,7 +25,8 @@ const handleAccessoriesPage = () => {
   history.push('/accessories')
 }
 
-function NavBar() {
+function NavBar(props) {
+  console.log('NAVBAR PROPS', props.counter)
 //----------------------------------------------- Checks for user auth ----------------------------------------------------------------------
   let userLoggedIn = sessionStorage.getItem('Bearer');
 
@@ -57,7 +59,9 @@ function NavBar() {
           <Link to="/signup" className="nav-link">Sign Up</Link>
         </li>
         <li className="nav-item">
-          <Link to="/cart" className="nav-link">Cart</Link>
+          <Link to="/cart" className="nav-link">
+            <button className="btn-nav-cart"> Cart {props.counter === 0 ? '' : `${props.counter}`} <i className="fas fa-shopping-cart"></i></button>
+          </Link>
         </li>
       </ul>
     </span>
@@ -66,4 +70,8 @@ function NavBar() {
   </div>)
 }
 
-export { NavBar };
+const mapStateToProps = state => ({
+  counter: state.cart.cartCount
+});
+
+export default connect(mapStateToProps)(NavBar);

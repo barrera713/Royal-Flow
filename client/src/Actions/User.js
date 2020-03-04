@@ -33,9 +33,9 @@ export const loginUser = (formData) => {
             })
         } catch(err) {
             console.log(err)
+            window.alert('The username or password does not match');
         };
     }  
-}
-
+};
 
 

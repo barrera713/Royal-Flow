@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addItem } from '../Actions/ActiveCart';
+import { addItem, cartCount } from '../Actions/ActiveCart';
 
 const ItemCard = (props) => {
 
@@ -9,9 +9,10 @@ const ItemCard = (props) => {
     const handleAddItem = (item) => {
         //---------- checks if item exist in props.cart --------------
         let findItem = props.cart.find(i => i.id === item.id)
-        console.log('item', findItem)
+        // console.log('item', findItem)
         if(!findItem) {
             props.addItem(item)
+            props.cartCount()
         } else {
             window.alert(`${item.description} is already in your cart.`)
         }
@@ -23,7 +24,10 @@ const ItemCard = (props) => {
             <div className="card-body">
             <p className="card-text">{item.description}</p>
             {item.size ? <p>Size {item.size} | Price ${item.price}</p> : <p>Price ${item.price}</p>}
-            <button onClick={() => handleAddItem(item)} className="btn btn-primary">Add to Cart</button>
+            <button type="button" className="btn btn-warning" onClick={() => handleAddItem(item)} >
+                <i className="fas fa-cart-arrow-down"></i>
+                Add to Cart
+            </button>
             </div>
         </div>
     </div>)
@@ -34,5 +38,5 @@ const mapStateToProps = state => ({
     cart: state.cart.cartItems
 });
 
-export default connect(mapStateToProps, { addItem })(ItemCard);
+export default connect(mapStateToProps, { addItem, cartCount })(ItemCard);
 

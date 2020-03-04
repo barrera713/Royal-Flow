@@ -1,7 +1,8 @@
-import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM } from '../Actions/Types';
+import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT } from '../Actions/Types';
 
 const initialState = {
-    cartItems: []
+    cartItems: [],
+    cartCount: 0
 };
 
 
@@ -34,6 +35,11 @@ export default function(state = initialState, action) {
                 ...item, quantity: item.quantity === 0 ? item.quantity = 0 : item.quantity - 1
             }
             return item })
+        }
+        case CARTCOUNT:
+            console.log('CART COUNT', state.cartCount)
+            return {
+            ...state, cartCount: state.cartCount + 1
         }
         default:
         return state;

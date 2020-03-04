@@ -1,5 +1,5 @@
 import { ADDITEM } from './Types';
-import { INCREMENT, DECREMENT, REMOVEITEM } from './Types';
+import { INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT } from './Types';
 
 export const addItem = (item) => (dispatch) => {
     dispatch({ 
@@ -29,3 +29,9 @@ export const decrementItem = (item) => (dispatch) => {
     })
 };
 
+export const cartCount = () => (dispatch) => {
+    console.log('cartcount action')
+    dispatch({
+        type: CARTCOUNT
+    })
+}

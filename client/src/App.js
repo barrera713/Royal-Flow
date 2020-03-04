@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
-import { NavBar } from './Containers/NavBar';
+import NavBar from './Containers/NavBar';
 import ItemCollection from './Containers/ItemCollection';
 import SneakerPage from './Containers/SneakerCollection';
 import ShirtCollection from './Containers/ShirtCollection';
