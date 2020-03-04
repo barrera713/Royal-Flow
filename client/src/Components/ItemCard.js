@@ -7,6 +7,7 @@ const ItemCard = (props) => {
     const { item } = props;
 
     const handleAddItem = (item) => {
+        //---------- checks if item exist in props.cart --------------
         let findItem = props.cart.find(i => i.id === item.id)
         console.log('item', findItem)
         if(!findItem) {

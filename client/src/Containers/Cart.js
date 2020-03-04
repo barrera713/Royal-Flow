@@ -41,7 +41,7 @@ class Cart extends React.Component{
         console.log('TOTALLL', cartTotal)
 
         let totalItems = this.props.cart.length;
-        
+
         // -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
         if(this.props.cart.length === 0 && userLoggedIn) {
             return<div>
