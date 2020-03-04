@@ -33,10 +33,7 @@ class ItemCollection extends React.Component {
     //----------- function that filter item description on user input ------------------------------
     let filterDescription = (description) => description.toLowerCase().includes(userInput.toLowerCase());
 
-    console.log('TESTING FILTER', this.props.items.filter(i => {
-      return filterDescription(i.description)
-    }))
-
+    // ----------------- filtered array -----------------------------------------------------
     let filteredData = this.props.items.filter(i => {
       return filterDescription(i.description)
     })
