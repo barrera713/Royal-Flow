@@ -7,8 +7,14 @@ const ItemCard = (props) => {
     const { item } = props;
 
     const handleAddItem = (item) => {
-       props.addItem(item);
-    }
+        let findItem = props.cart.find(i => i.id === item.id)
+        console.log('item', findItem)
+        if(!findItem) {
+            props.addItem(item)
+        } else {
+            window.alert(`${item.description} is already in your cart.`)
+        }
+    };
 
     return(<div className="col mb-4" key={item.id}>
         <div className="card h-100">
@@ -22,5 +28,10 @@ const ItemCard = (props) => {
     </div>)
 };
 
-export default connect(null, { addItem })(ItemCard);
+
+const mapStateToProps = state => ({
+    cart: state.cart.cartItems
+});
+
+export default connect(mapStateToProps, { addItem })(ItemCard);
 

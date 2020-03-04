@@ -18,28 +18,12 @@ class Cart extends React.Component{
         return(<LoggedOutCart />)
         }
         
-        //----------- Funciton to remove duplicate objects in the cart array -------------------------------------------------------
-        const deleteDuplicate = (cartArr) => {
-            let table = {};
-            let uniqArr = [];
-            for(let i = 0; i < cartArr.length; i++) {
-                if(!table[cartArr[i].id]) {
-                    table[cartArr[i].id] = true;
-                    uniqArr.push(cartArr[i])
-                }
-            }
-            return uniqArr
-        }
-
-        const uniqCart = deleteDuplicate(this.props.cart); 
-
-        
-        //----------------------------- Using deleleDeuplicate function to multiply each item's price by it's quantity  ------------------------------
-        let eachItemTotal = deleteDuplicate(this.props.cart).map(i => i.price * i.quantity)
+        //----------------------------- function to multiply each item's price by it's quantity  ------------------------------
+        let eachItemTotal = this.props.cart.map(i => i.price * i.quantity)
         //-------------------------- returns array of total price for each item ---------------------------------------------------------------------
         console.log('eachItemTotal', eachItemTotal)
         
-        //------------------------------------- if else function for array of total items ------------------------------------------------------------
+        //------------------------------------- if else function to join array total depending on the length of array  ------------------------------------------------------------
         const getGranTotal = (arr) => {
             if(arr.length === 0) {
                 return ''
@@ -52,10 +36,11 @@ class Cart extends React.Component{
                 return sum
             }
         }
+
         let cartTotal = getGranTotal(eachItemTotal);
         console.log('TOTALLL', cartTotal)
 
-        let totalItems = deleteDuplicate(this.props.cart).length;
+        let totalItems = this.props.cart.length;
         
         // -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
         if(this.props.cart.length === 0 && userLoggedIn) {
@@ -66,7 +51,7 @@ class Cart extends React.Component{
             return(
                 <div>
                     <p>Shopping Cart</p>
-                    {uniqCart.map(i => {
+                    {this.props.cart.map(i => {
                         return <CartItem item={i}/>
                     })}
                     <div>
