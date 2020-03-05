@@ -26,10 +26,10 @@ db.authenticate()
 
 
 //---------------------------------------- Sync Database Models-------------------------------------
-User.hasMany(Cart);
+User.hasMany(Cart, {foreignKey: 'userId' });
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
-Cart.belongsToMany(Item, { through: CartItem });
-Item.belongsToMany(Cart, { through: CartItem });
+Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'orderId', otherKey: 'itemId' });
+Item.belongsToMany(Cart, { through: CartItem, as: 'orders', foreignKey: 'itemId', otherKey: 'orderId' });
 
 
 // db.sync({ force: true });
@@ -41,6 +41,7 @@ app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', cartRoute);
 app.use('/cart-item', cartItem);
+
 
 
 const PORT = process.env.PORT || 5000;

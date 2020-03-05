@@ -8,9 +8,6 @@ const CartItem = db.define('cartItem', {
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    quantity: {
-        type: Sequelize.INTEGER
     }
     
 });

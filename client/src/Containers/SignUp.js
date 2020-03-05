@@ -10,6 +10,7 @@ class SignUp extends React.Component {
         e.preventDefault()
         const formData = {
             "email": e.target["email"].value,
+            "username": e.target["username"].value,
             "password": e.target["password"].value
         }
         // console.log('inside loginForm', formData)
@@ -20,6 +21,10 @@ class SignUp extends React.Component {
 
         return(
         <form className="login-form" onSubmit={this.loginForm}>
+             <div className="form-group">
+                <label>Username</label>
+                <input type="username" className="form-control" name="username" />
+            </div>
             <div className="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />

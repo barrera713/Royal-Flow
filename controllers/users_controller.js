@@ -9,6 +9,7 @@ exports.postAddUser = async (req, res, next) => {
 
     const newUser = new User({
         email: req.body.email,
+        username: req.body.username,
         password: hashedPassword
     })
     try {

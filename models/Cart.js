@@ -8,6 +8,10 @@ const Cart = db.define('cart', {
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
+    },
+    total: {
+        type: Sequelize.DOUBLE,
+        allowNull: false
     }
 })
 
