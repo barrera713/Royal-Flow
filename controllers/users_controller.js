@@ -31,8 +31,10 @@ exports.loginUser = async (req, res, next) => {
     if(!userPassword) return res.status(400).send('Username or password is incorrect');
 
 //---------------------------------------------- Signs Token --------------------------------------------
-    const token = jwt.sign({_id: user._id}, process.env.USER_TOKEN, {expiresIn: '10h'} );
-    res.send({'Bearer': token });
+    jwt.sign({_id: user.id}, process.env.USER_TOKEN, { expiresIn: '1h' },(err, token) => {
+        if(err) { console.log(err) }    
+        res.send({'Bearer': token});
+    });
 };
 
 

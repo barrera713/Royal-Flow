@@ -39,11 +39,11 @@ exports.getItemsFromCart = (req, res, next) => {
 
 
 //-------------------------------------------------- Create User Cart -------------------------------
-exports.postCart = async (req, res, next) => {
+exports.postCart = async (req, res) => {
     console.log('REQ', req.user)
     const newCart = new Cart({
         total: req.body.total,
-        userId: req.user.user.id
+        userId: req.user._id
     })
     try {
         const savedCart = await newCart.save()
@@ -61,8 +61,6 @@ exports.postCart = async (req, res, next) => {
         console.log(err)
     }
 };
-
-
 
 
 

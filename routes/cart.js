@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const carts_controller = require('../controllers/carts_controller');
 
-
 // ---------------------- Create Cart --------------------
 router.post('/new', carts_controller.postCart);
 
