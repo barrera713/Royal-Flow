@@ -11,6 +11,8 @@ const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');
 const cartRoute = require('./routes/cart');
 const cartItem = require('./routes/cartItems');
+const verifyAuth = require('./verifyToken');
+
 
 dotenv.config();
 
@@ -39,7 +41,7 @@ Item.belongsToMany(Cart, { through: CartItem, as: 'orders', foreignKey: 'itemId'
 app.use(cors());
 app.use('/user', userRoute);
 app.use('/shop', itemRoute);
-app.use('/cart', cartRoute);
+app.use('/cart', verifyAuth, cartRoute);
 app.use('/cart-item', cartItem);
 
 

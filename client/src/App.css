@@ -4,12 +4,20 @@
 }
 
 /*------------------------------------------- NavBar ----------------------------------*/
+.fas.fa-shopping-cart {
+  padding-right: 3px;
+}
 
 .btn-nav-cart {
   width: 70px;
   padding: 0px;
   background-color: #fcc107;
   border-radius: 5px;
+  transition: .2s
+}
+
+.btn-nav-cart:hover {
+  background-color: #ecb500;
 }
 
 /*----------------------------------------- Item Collection---------------------------------------------*/
@@ -34,7 +42,6 @@
   list-style: none;
   display: inline-block;
 }
-
 
 .fas.fa-cart-arrow-down {
   font-size: 20px;
@@ -68,8 +75,11 @@
 }
 
 
-/*----------------------------------------------------- Active Cart ----------------------------------------*/
+/*----------------------------------------------------- Cart Item Card ----------------------------------------*/
 
+.card {
+  margin: 4px 0;
+}
 
 .container {
  display: flex;
@@ -109,8 +119,32 @@
   font-size: 12px;
 }
 
+.btn.btn-secondary.btn-sm, .btn.btn-primary.btn-sm {
+  width: 30px;
+  margin: 2px;
+}
 
-@media screen and (max-width: 992px) {
+/* --------------------------- Cart Page Start ----------------------------- */
+.cart-container {
+  display: flex;
+  padding: 30px;
+}
+
+.items-container {
+  width: 70%;
+}
+
+.total-container {
+  width: 30%;
+  margin: 0 20px;
+}
+
+.btn.btn-warning.cart {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1175px) {
 
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
 
@@ -144,12 +178,31 @@
     padding: 0 5px;
   }
 
-  /*--------------------------------------- Active Cart --------------------------------------- */
+  /* ----------------------------------- Cart Page -------------------*/
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .items-container {
+    width: 100%;
+  }
+  
+  .total-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  /*--------------------------------------- Cart Item Card --------------------------------------- */
+
+  .card {
+    margin: 5px 0;
+  }
 
   .container {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
   }
 
   .item-img {
@@ -171,6 +224,7 @@
     height: 250px;
     padding-bottom: 20px;
   }
+
 
 
 }

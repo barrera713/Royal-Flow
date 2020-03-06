@@ -18,7 +18,8 @@ export default function(state = initialState, action) {
         case REMOVEITEM: 
         return {
             ...state,
-            cartItems: state.cartItems.filter(item => item !== action.payload ) 
+            cartItems: state.cartItems.filter(item => item !== action.payload ),
+            cartCount: state.cartCount - 1 
         };
         case INCREMENT:  
         return {

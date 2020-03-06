@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { LoggedOutCart} from '../Components/LoggedOutCart';
 import CartItem from '../Components/CartItem';
+import { checkoutCart } from '../Actions/ActiveCart';
 
 
 class Cart extends React.Component{
@@ -49,15 +50,18 @@ class Cart extends React.Component{
             </div>
         } else { 
             return(
-                <div>
+                <div className="cart-container">
+                    <div className="items-container">
                     <p>Shopping Cart</p>
                     {this.props.cart.map(i => {
                         return <CartItem item={i}/>
                     })}
-                    <div>
+                    </div>
+                    <div className="total-container">
                         { totalItems > 1 ? <p>Items ({totalItems})</p> : <p>Item ({totalItems})</p> }
                         <hr/>
-                        <h4>Total ${cartTotal}</h4>
+                        <p>Total ${cartTotal}</p>
+                        <button className="btn btn-warning cart" onClick={() => this.props.checkoutCart(cartTotal, this.props.cart)}>Checkout</button>
                     </div>
                 </div>
             )
@@ -70,5 +74,5 @@ const mapStateToProps = state => ({
     cart: state.cart.cartItems
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, { checkoutCart })(Cart);
 

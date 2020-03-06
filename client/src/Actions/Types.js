@@ -9,5 +9,6 @@ export const REMOVEITEM = "REMOVEITEM"
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 export const CARTCOUNT = "CARTCOUNT";
+export const CHECKOUT = "CHECKOUT";
 // ----------------------------- User Search Input ------------------------
 export const USERINPUT = "USERINPUT";
