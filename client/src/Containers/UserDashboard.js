@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getUserOrders } from '../Actions/Orders';
+import OrderCard from '../Components/OrderCard';
 
 
 class UserDashboard extends React.Component {
@@ -14,13 +15,16 @@ class UserDashboard extends React.Component {
         console.log('ORDER PROPS DASHBOARD:', this.props.allOrders)
 
         return(<div>
-            <h3>Welcome to your dashboard</h3>
+            <h5>Welcome to your dashboard</h5>
+            {this.props.allOrders.map(i => {
+                return <OrderCard order={i} key={i.id}/>
+            })}
         </div>)
     }
 }
 
 const mapStateToProp = (state) => ({
-    allOrders: state.userOrders
+    allOrders: state.userOrders.orders
 })
 
 export default connect(mapStateToProp, { getUserOrders })(UserDashboard);
