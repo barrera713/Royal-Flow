@@ -11,5 +11,6 @@ export const DECREMENT = "DECREMENT";
 export const CARTCOUNT = "CARTCOUNT";
 export const NEWORDER = "NEWORDER";
 export const ALLORDERS = "ALLORDERS";
+export const ORDERDETAILS = "ORDERDETAILS";
 // ----------------------------- User Search Input ------------------------
 export const USERINPUT = "USERINPUT";

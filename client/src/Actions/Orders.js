@@ -1,4 +1,4 @@
-import { ALLORDERS } from './Types';
+import { ALLORDERS, ORDERDETAILS } from './Types';
 import axios from 'axios';
 
 const URL = 'http://localhost:5000';
@@ -15,7 +15,26 @@ export const getUserOrders = () => {
                 type: ALLORDERS,
                 payload: orders.data
             })
-            // console.log(orders.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+};
+
+export const getItemsFromOrder = (id) => {
+    console.log('ID', id)
+    return async (dispatch) => { 
+        try {
+            const data = await axios({
+                method: 'get',
+                url: `${URL}/cart/order/items/${id}`,
+                headers: {'Authorization': sessionStorage.getItem('Bearer')},
+            })
+            let items = data.data.map(i => i.items)
+            dispatch({
+                type: ORDERDETAILS,
+                payload: items
+            })
         } catch (err) {
             console.log(err)
         }

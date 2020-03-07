@@ -10,6 +10,7 @@ import SignUp from './Containers/SignUp';
 import Login  from './Containers/Login';
 import Cart from './Containers/Cart';
 import UserDashboard from './Containers/UserDashboard';
+import OrderDetails from './Containers/OrderDetails';
 
 
 
@@ -28,6 +29,7 @@ function App() {
      <Route exact path="/login" component={Login} />
      <Route exact path="/cart" component={Cart} />
      <Route exact path="/dashboard" component={UserDashboard} />
+     <Route exact path="/details/:id" component={OrderDetails} />
     </Switch>
     </Router>
    </div>

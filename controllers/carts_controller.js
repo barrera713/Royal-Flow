@@ -23,15 +23,20 @@ exports.getCartPage = (req, res, next) => {
 // ------------------------------------------------------ Get Cart Items from Cart ---------------------------------------------
 exports.getItemsFromCart = (req, res, next) => {
     try {
-        Cart.findAll({ include: [{
-            model: Item, as: 'items',
-            where: { id: req.params.id }}]
+        Cart.findAll({
+            where: {id: req.params.id},
+            // Make sure to include the products
+            include: [{
+            model: Item,
+            as: 'items',
+            required: false,
+            }]
         })
-        .then(items => {
-            res.json(items)
+        .then(data => {
+            res.send(data)
         })
     } catch (err) {
-        if(err) return res.status(400).send(err)
+        res.send(err)
     }
 };
 

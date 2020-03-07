@@ -1,7 +1,8 @@
-import { NEWORDER, ALLORDERS } from '../Actions/Types';
+import { NEWORDER, ALLORDERS, ORDERDETAILS } from '../Actions/Types';
 
 const initialState = {
-    orders: []
+    orders: [],
+    orderDetails: []
 };
 
 
@@ -16,6 +17,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 orders: action.payload
+            }
+        case ORDERDETAILS:
+            return {
+                ...state,
+                orderDetails: action.payload
             }
         default:
             console.log('ORDERS REDUCER', state.orders)

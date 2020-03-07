@@ -9,7 +9,7 @@ router.post('/new', carts_controller.postCart);
 router.get('/orders', carts_controller.getCartPage);
 
 //------------------------ Get Item from Cart ---------------
-router.get('/user/items/:id', carts_controller.getItemsFromCart);
+router.get('/order/items/:id', carts_controller.getItemsFromCart);
 
 
 module.exports = router;

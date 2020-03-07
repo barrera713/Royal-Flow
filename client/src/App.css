@@ -144,6 +144,19 @@
 }
 
 
+/*------------------------------ Order Detail Card --------------------------------- */
+.order-detail-card ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 7px;
+}
+
+.order-detail-img {
+  width: 150px;
+  height: 200px;
+}
+
+
 @media screen and (max-width: 1175px) {
 
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
