@@ -1,5 +1,4 @@
-import { ADDITEM } from './Types';
-import { INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT, CHECKOUT } from './Types';
+import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT, NEWORDER } from './Types';
 import axios from 'axios';
 
 const URL = 'http://localhost:5000';
@@ -39,7 +38,6 @@ export const cartCount = () => (dispatch) => {
 }
 
 export const checkoutCart = (total, items) => {
-    // let token = sessionStorage.getItem('Bearer');
     return (dispatch) => { 
         axios({
             method: 'post',
@@ -51,14 +49,14 @@ export const checkoutCart = (total, items) => {
             }
         })
         .then(res => {
-            console.log(res)
+          dispatch({
+            type: NEWORDER,
+            payload: res.data
+          })
+          window.alert('Your order has been successfully placed!')
         })
         .catch(err => {
             console.log(err)
-        })
-        dispatch({
-            type: CHECKOUT,
-            payload: [total, items]
         })
     }
 };

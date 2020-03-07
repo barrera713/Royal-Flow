@@ -44,7 +44,7 @@ class ItemCollection extends React.Component {
         </div>
         <div className="row row-cols-1 row-cols-md-3">
         {filteredData.map(i => {
-          return <ItemCard item={i}/>
+          return <ItemCard item={i} key={i.id}/>
         })}
         </div>
     </div>)

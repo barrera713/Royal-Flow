@@ -9,6 +9,9 @@ import AccessoriesCollection from './Containers/AccessoriesCollection';
 import SignUp from './Containers/SignUp';
 import Login  from './Containers/Login';
 import Cart from './Containers/Cart';
+import UserDashboard from './Containers/UserDashboard';
+
+
 
 import './App.css';
 
@@ -24,6 +27,7 @@ function App() {
      <Route exact path="/signup" component={SignUp} />
      <Route exact path="/login" component={Login} />
      <Route exact path="/cart" component={Cart} />
+     <Route exact path="/dashboard" component={UserDashboard} />
     </Switch>
     </Router>
    </div>

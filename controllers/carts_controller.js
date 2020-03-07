@@ -7,12 +7,11 @@ const User = require('../models/User');
 
 //--------------------------------------------------- Gets User's Cart ------------------------------------------------------
 exports.getCartPage = (req, res, next) => {
-    User.findAll({ 
-      where: { id: req.params.id },
-      include: [Cart] 
+    Cart.findAll({ 
+      where: { userId: req.user._id }
     })
-    .then(carts => {
-        res.json(carts)
+    .then(data => {
+        res.json(data)
     })
     .catch(err => {
         if(err) return res.status(400).send('ERROR', err)
