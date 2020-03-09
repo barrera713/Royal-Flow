@@ -9,13 +9,14 @@ const ItemCard = (props) => {
 
     const handleAddItem = (item) => {
         let userLoggedIn = sessionStorage.getItem('Bearer');
-        if(!userLoggedIn) {
-            history.push('/login')
-        }
+    
         //---------- checks if item exist in props.cart --------------
         let findItem = props.cart.find(i => i.id === item.id)
         // console.log('item', findItem)
-        if(!findItem) {
+        if(userLoggedIn === null ) {
+            history.push('/login');
+        }
+        else if (findItem === undefined && userLoggedIn !== null) {
             props.addItem(item)
             props.cartCount()
         } else {
