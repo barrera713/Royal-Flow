@@ -1,12 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addItem, cartCount } from '../Actions/ActiveCart';
+import history from '../history';
 
 const ItemCard = (props) => {
 
     const { item } = props;
 
     const handleAddItem = (item) => {
+        let userLoggedIn = sessionStorage.getItem('Bearer');
+        if(!userLoggedIn) {
+            history.push('/login')
+        }
         //---------- checks if item exist in props.cart --------------
         let findItem = props.cart.find(i => i.id === item.id)
         // console.log('item', findItem)

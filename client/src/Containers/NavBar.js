@@ -9,21 +9,6 @@ const handleLogOut = () => {
   sessionStorage.clear()
 }
 
-// const handleHome = () => {
-//   history.push('/')
-// }
-
-// const handleSneakerPage = () => {
-//   history.push('/sneakers')
-// }
-
-// const handleShirtPage = () => {
-//   history.push('/tops')
-// }
-
-// const handleAccessoriesPage = () => {
-//   history.push('/accessories')
-// }
 
 function NavBar(props) {
   console.log('NAVBAR PROPS', props.counter)
