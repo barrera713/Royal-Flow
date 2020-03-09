@@ -17,7 +17,7 @@ function OrderDetailCard(props) {
                     <p>{i.description}</p>
                 </li>
                 <li>
-                    <p>Qauntity {i.quantity}</p>
+                    <p>Quantity {i.cartItem.quantity}</p>
                 </li>
                 <li>
                     <p className="card-text">Price ${i.price}</p>

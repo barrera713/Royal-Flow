@@ -55,7 +55,8 @@ exports.postCart = async (req, res) => {
         // Create a obj to create new CartItem
         const newCartItem = {
           orderId: savedCart.id,
-          itemId: item.id
+          itemId: item.id,
+          quantity: item.quantity
         }
         // Create and save a CartItem
         const savedProductOrder = CartItem.create(newCartItem); 
