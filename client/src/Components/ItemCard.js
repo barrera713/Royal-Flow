@@ -24,6 +24,11 @@ const ItemCard = (props) => {
         }
     };
 
+    const handleViewReviews = (item) => {
+        console.log(`INSIDE REVIEWS ${item.id}`, item)
+        history.push(`/reviews/${item.id}`)
+    }
+
     return(<div className="col mb-4" key={item.id}>
         <div className="card h-100">
             <img src={item.imageUrl} className="card-img-top" alt="..." />
@@ -34,6 +39,7 @@ const ItemCard = (props) => {
                 <i className="fas fa-cart-arrow-down"></i>
                 Add to Cart
             </button>
+            <button type="button" className="btn btn-primary" onClick={() => handleViewReviews(item)}>Reviews</button>
             </div>
         </div>
     </div>)

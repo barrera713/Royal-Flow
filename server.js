@@ -7,9 +7,11 @@ const User = require('./models/User');
 const Item = require('./models/Item');
 const Cart = require('./models/Cart');
 const CartItem = require('./models/Cart-Item');
+const Review = require('./models/Review');
 const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');
 const cartRoute = require('./routes/cart');
+const reviewRoute = require('./routes/review');
 const cartItem = require('./routes/cartItems');
 const verifyAuth = require('./verifyToken');
 
@@ -30,8 +32,10 @@ db.authenticate()
 //---------------------------------------- Sync Database Models-------------------------------------
 User.hasMany(Cart, {foreignKey: 'userId' });
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
-Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'orderId', otherKey: 'itemId' });
-Item.belongsToMany(Cart, { through: CartItem, as: 'orders', foreignKey: 'itemId', otherKey: 'orderId' });
+Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'cartId', otherKey: 'itemId' });
+Item.belongsToMany(Cart, { through: CartItem, as: 'cart', foreignKey: 'itemId', otherKey: 'cartId' });
+User.belongsToMany(Item, { through: Review });
+Item.belongsToMany(User, { through: Review });
 
 
 // db.sync({ force: true });
@@ -43,6 +47,7 @@ app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', verifyAuth, cartRoute);
 app.use('/cart-item', cartItem);
+app.use('/review', reviewRoute);
 
 
 
