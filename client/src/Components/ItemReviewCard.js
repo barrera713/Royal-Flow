@@ -1,9 +1,22 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { createReview } from '../Actions/Review';
 
 function ItemReviewCard(props) {
 
     const { item } = props;
+
+    console.log('PROPS INSIDE ITEMREVIEWCARD', item)
+
+    let submitReview = (e) => {
+        e.preventDefault()
+        let formData = {
+            "rating": e.target["rating"].value, 
+            "content": e.target["content"].value
+        }
+        // console.log('INSIDE FUNCTION', formData, item.id)
+        props.createReview(formData, item.id)
+    }
 
     return(<div className="card">
     <img src={item.imageUrl} className="img-review-display" alt="..." />
@@ -11,15 +24,14 @@ function ItemReviewCard(props) {
     <p className="card-text">{item.description}</p>
     <p className="card-text">Price ${item.price}</p>
     <p className="card-text">Size {item.size}</p>
-    <button className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Write a Review</button>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Rating</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+    <div className="modal fade" id="item-review" tabIndex="-1"  aria-hidden="true">
+    <div className="modal-dialog" >
+        <div className="modal-content">
+            <form onSubmit={submitReview}>
+                <div className="form-group">
+                    <label>Rating</label>
+                    <select className="form-control" name="rating">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -27,10 +39,11 @@ function ItemReviewCard(props) {
                     <option>5</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Tell us what you think</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div className="form-group">
+                    <label >Tell us what you think</label>
+                    <textarea className="form-control" name="content"></textarea>
                 </div>
+                    <button className="btn btn-warning" type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -38,4 +51,4 @@ function ItemReviewCard(props) {
   </div>)
 }
 
-export default ItemReviewCard;
+export default connect(null, { createReview })(ItemReviewCard);

@@ -16,3 +16,4 @@ export const ORDERDETAILS = "ORDERDETAILS";
 export const USERINPUT = "USERINPUT";
 //------------------------------- Item Reviews ---------------------------
 export const GETITEMREVIEWS = "GETITEMREVIEWS";
+export const NEWREVIEW = "NEWREVIEW";

@@ -1,17 +1,24 @@
-import { GETITEMREVIEWS } from '../Actions/Types';
+import { GETITEMREVIEWS, NEWREVIEW } from '../Actions/Types';
 
 const initialState = {
-    allItemReviews: []
+    allItemReviews: [],
+    item: {}
 };
 
 export default function(state = initialState, action) {
     switch(action.type) {
         case GETITEMREVIEWS:
-            console.log('Inside reviews reducer')
         return {
             ...state,
-            allItemReviews: action.payload
+            //--------------------- index [1] contains array of review data ----------
+            allItemReviews: action.payload[1],
+            item: action.payload[0]
         };
+        case NEWREVIEW:
+        return {
+            ...state,
+            allItemReviews: [...state.allItemReviews, action.payload]
+        }
         default: 
         return state;
     }

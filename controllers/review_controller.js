@@ -27,11 +27,11 @@ exports.getReviews = async (req, res, next) => {
             include: [{
                 model: User,
                 as: 'itemReviews',
-                required: false
+                attributes: ['username']
             }]
         })
         .then(data => {
-            res.send(data)
+            res.json([data[0], data[0].itemReviews])
         })
     } catch (err) {
         res.send(err)

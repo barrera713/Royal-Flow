@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addItem, cartCount } from '../Actions/ActiveCart';
 import { getItemReviews } from '../Actions/Review';
 import history from '../history';
+import { Link } from 'react-router-dom';
 
 const ItemCard = (props) => {
 
@@ -25,9 +26,7 @@ const ItemCard = (props) => {
     };
 
     const handleViewReviews = (item) => {
-        console.log(`INSIDE REVIEW function ${item.id}`)
         props.getItemReviews(item.id)
-        history.push(`/reviews/${item.id}`)
     }
 
     return(<div className="col mb-4" key={item.id}>
@@ -40,7 +39,9 @@ const ItemCard = (props) => {
                 <i className="fas fa-cart-arrow-down"></i>
                 Add to Cart
             </button>
-            <button type="button" className="btn btn-primary" onClick={() => handleViewReviews(item)}>Reviews</button>
+            <Link to={`/reviews/${item.id}`}>
+                <button type="button" className="btn btn-primary" onClick={() => handleViewReviews(item)}>Reviews</button>
+            </Link>
             </div>
         </div>
     </div>)
