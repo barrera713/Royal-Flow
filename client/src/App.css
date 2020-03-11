@@ -157,6 +157,25 @@
 }
 
 
+/*----------------------------------------- Review Page  ---------------------------------*/
+.container-review-item {
+  display: flex;
+}
+
+.item-box {
+  width: 50%;
+}
+
+.review-box {
+  width: 50%;
+}
+
+.img-review-display {
+  width: 300px;
+  height: auto;
+}
+
+
 @media screen and (max-width: 1175px) {
 
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/

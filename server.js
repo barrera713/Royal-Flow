@@ -32,10 +32,10 @@ db.authenticate()
 //---------------------------------------- Sync Database Models-------------------------------------
 User.hasMany(Cart, {foreignKey: 'userId' });
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
-Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'cartId', otherKey: 'itemId' });
-Item.belongsToMany(Cart, { through: CartItem, as: 'cart', foreignKey: 'itemId', otherKey: 'cartId' });
-User.belongsToMany(Item, { through: Review });
-Item.belongsToMany(User, { through: Review });
+Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'cartId', otherKey: 'itemId'});
+Item.belongsToMany(Cart, { through: CartItem, as: 'cart', foreignKey: 'itemId', otherKey: 'cartId'});
+User.belongsToMany(Item, { through: Review, as: 'userReviews', foreignKey: 'userId', otherKey: 'itemId'});
+Item.belongsToMany(User, { through: Review, as: 'itemReviews', foreignKey: 'itemId', otherKey: 'userId'});
 
 
 // db.sync({ force: true });
@@ -47,7 +47,7 @@ app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', verifyAuth, cartRoute);
 app.use('/cart-item', cartItem);
-app.use('/review', reviewRoute);
+app.use('/reviews', reviewRoute);
 
 
 

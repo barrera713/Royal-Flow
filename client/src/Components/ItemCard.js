@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addItem, cartCount } from '../Actions/ActiveCart';
+import { getItemReviews } from '../Actions/Review';
 import history from '../history';
 
 const ItemCard = (props) => {
@@ -9,7 +10,6 @@ const ItemCard = (props) => {
 
     const handleAddItem = (item) => {
         let userLoggedIn = sessionStorage.getItem('Bearer');
-    
         //---------- checks if item exist in props.cart --------------
         let findItem = props.cart.find(i => i.id === item.id)
         // console.log('item', findItem)
@@ -25,7 +25,8 @@ const ItemCard = (props) => {
     };
 
     const handleViewReviews = (item) => {
-        console.log(`INSIDE REVIEWS ${item.id}`, item)
+        console.log(`INSIDE REVIEW function ${item.id}`)
+        props.getItemReviews(item.id)
         history.push(`/reviews/${item.id}`)
     }
 
@@ -50,5 +51,5 @@ const mapStateToProps = state => ({
     cart: state.cart.cartItems
 });
 
-export default connect(mapStateToProps, { addItem, cartCount })(ItemCard);
+export default connect(mapStateToProps, { addItem, cartCount, getItemReviews })(ItemCard);
 

@@ -14,3 +14,5 @@ export const ALLORDERS = "ALLORDERS";
 export const ORDERDETAILS = "ORDERDETAILS";
 // ----------------------------- User Search Input ------------------------
 export const USERINPUT = "USERINPUT";
+//------------------------------- Item Reviews ---------------------------
+export const GETITEMREVIEWS = "GETITEMREVIEWS";

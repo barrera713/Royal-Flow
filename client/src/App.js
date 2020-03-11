@@ -11,7 +11,7 @@ import Login  from './Containers/Login';
 import Cart from './Containers/Cart';
 import UserDashboard from './Containers/UserDashboard';
 import OrderDetails from './Containers/OrderDetails';
-import ReviewPage from './Containers/ReviewPage';
+import ItemReviews from './Containers/ItemReviews';
 
 
 
@@ -31,7 +31,7 @@ function App() {
      <Route exact path="/cart" component={Cart} />
      <Route exact path="/dashboard" component={UserDashboard} />
      <Route exact path="/details/:id" component={OrderDetails} />
-     <Route exact path="/reviews/:id" component={ReviewPage} />
+     <Route exact path="/reviews/:id" component={ItemReviews} />
     </Switch>
     </Router>
    </div>
