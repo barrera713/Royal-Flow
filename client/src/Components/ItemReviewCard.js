@@ -14,7 +14,6 @@ function ItemReviewCard(props) {
             "rating": e.target["rating"].value, 
             "content": e.target["content"].value
         }
-        // console.log('INSIDE FUNCTION', formData, item.id)
         props.createReview(formData, item.id)
     }
 

@@ -25,9 +25,9 @@ const ItemCard = (props) => {
         }
     };
 
-    const handleViewReviews = (item) => {
-        props.getItemReviews(item.id)
-    }
+    // const handleViewReviews = (item) => {
+    //     props.getItemReviews(item.id) 
+    // }
 
     return(<div className="col mb-4" key={item.id}>
         <div className="card h-100">
@@ -39,8 +39,8 @@ const ItemCard = (props) => {
                 <i className="fas fa-cart-arrow-down"></i>
                 Add to Cart
             </button>
-            <Link to={`/reviews/${item.id}`}>
-                <button type="button" className="btn btn-primary" onClick={() => handleViewReviews(item)}>Reviews</button>
+            <Link to={{pathname: `/reviews/${item.id}`, state: {item: item.id } }}>
+                <button type="button" className="btn btn-primary">Reviews</button>
             </Link>
             </div>
         </div>

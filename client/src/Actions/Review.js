@@ -37,13 +37,15 @@ export const createReview = (formData, itemId) => {
                     itemId: itemId
                 }
             })
-            .then(res => {
-                console.log('RESULT', res)
+            console.log('NEW REVIEW ACTION', newReview.data)
+            let username = newReview.data[0]
+            let review = newReview.data[1].review
+            const allReviewData = {...username, review }
+            console.log('AFTER SPREAD', allReviewData)
+            dispatch({
+                type: NEWREVIEW,
+                payload: allReviewData
             })
-            // dispatch({
-            //     type: NEWREVIEW,
-            //     payload: newReview
-            // })
         } catch (err) {
             console.log(err)
         }

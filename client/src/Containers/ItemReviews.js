@@ -1,11 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getItemReviews } from '../Actions/Review';
 import ItemReviewCard from '../Components/ItemReviewCard';
 import ReviewCard from '../Components/ReviewCard';
 
 
 
 class ItemReviews extends React.Component {
+
+    componentDidMount() {
+        console.log('COMPONENT DID MOUNT: ITEM', this.props.location.state.item)
+        // ----------------- Get itemId from "this.props.location.state" passed from Link tag inside ItemCard  ----------------------
+        this.props.getItemReviews(this.props.location.state.item)
+    }
 
     render() {
 
@@ -25,9 +32,7 @@ class ItemReviews extends React.Component {
                 </div>
             </div>
             <div>
-            {this.props.reviews.map(i => {
-                return <ReviewCard review={i} />
-            })}
+            <ReviewCard />
             </div>
         </div>)
     }
@@ -35,8 +40,7 @@ class ItemReviews extends React.Component {
 
 
 const mapStateToProps = state => ({
-    reviews: state.itemReviews.allItemReviews,
     item: state.itemReviews.item
 })
 
-export default connect(mapStateToProps)(ItemReviews);
+export default connect(mapStateToProps, { getItemReviews })(ItemReviews);

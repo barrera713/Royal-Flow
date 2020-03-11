@@ -14,7 +14,13 @@ exports.postReview = async (req, res, next) => {
     })
     try {
         const savedReview = await newReview.save();
-        res.send({savedReview});
+        User.findAll({
+            where: {id: req.user._id},
+            attributes: ['username']
+        })
+        .then(data => {
+            res.json([data[0], {review: savedReview }])
+        })
     } catch (err) {
         if(err) res.send(err)
     }
