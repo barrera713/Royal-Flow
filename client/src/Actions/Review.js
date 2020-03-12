@@ -46,6 +46,7 @@ export const createReview = (formData, itemId) => {
                 type: NEWREVIEW,
                 payload: allReviewData
             })
+            window.alert('Your review has been posted successfully!')
         } catch (err) {
             console.log(err)
         }

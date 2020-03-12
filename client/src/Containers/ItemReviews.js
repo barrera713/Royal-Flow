@@ -19,18 +19,9 @@ class ItemReviews extends React.Component {
 
         console.log('REVIEWS: inside ItemReview', this.props.item)
         
-        return(<div>
+        return(<div className="reviewpage-container">
             <p>Review Page</p>
-            <div className="container-review-item">
-                <div className="item-box">
-                    <ItemReviewCard item={this.props.item}/>
-                </div>
-                <div className="rating-box">
-                    <p>Rating</p>
-                    <p>Content</p>
-                    <button className="btn btn-primary" data-toggle="modal" data-target="#item-review">Write a Review</button>
-                </div>
-            </div>
+                <ItemReviewCard item={this.props.item}/>
             <div>
             <ReviewCard />
             </div>
