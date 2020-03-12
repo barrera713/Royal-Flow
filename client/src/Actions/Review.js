@@ -59,18 +59,25 @@ export const createReview = (formData, itemId) => {
 export const deleteReview = (id) => {
     return async (dispatch) => {
         try {
-            axios({
+            await axios({
                 method: 'delete',
                 url: `${URL}/reviews/delete/${id}`,
                 headers: {'Authorization': sessionStorage.getItem('Bearer')}
+                
             })
-            console.log('INSIDE ACTION', id)
+            .then(res => {
+                if(res.ok)
+                return res.json()
+            })
             dispatch({
                 type: DELETEREVIEW,
                 payload: id
             })
-        } catch (err) {
-            console.log(err)
+
+        } catch(error) {
+            console.log(error.response)
+            window.alert(error.response.statusText);
         }
+       
     }
 }

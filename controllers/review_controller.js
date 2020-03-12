@@ -44,16 +44,23 @@ exports.getReviews = async (req, res, next) => {
     }
 };
 
-exports.deleteReview = async (req, res, next) => {
+exports.deleteReview = (req, res, next) => {
     try {
-        Review.destroy({
-            where: {id: req.params.id}
+        Review.findAll({
+            where: { id: req.params.id }
         })
         .then(data => {
-            res.json(data)
+            console.log('DATA', data[0].dataValues.userId)
+            if(data[0].dataValues.userId === req.user._id) {
+                data[0].destroy();
+                res.status(200).send('Review has been deleted.')
+            }
+            if(data[0].dataValues.userId !== req.user._id) {
+                res.status(401).json({error: 'Unauthorized'})
+            }
         })
-    } catch (err) {
-        console.log(err)
-        res.send(err)
+    }
+    catch (err) {
+        console.log('ERROR:', err)
     }
 }
