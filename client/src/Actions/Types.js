@@ -1,8 +1,5 @@
 //---------------------------- Data Types --------------------------------
 export const ALLDATA = "ALLDATA";
-//---------------------------- User Types --------------------------------
-export const SIGNUP = "SIGNUP";
-export const LOGIN = "LOGIN";
 //----------------------------- Active Cart -------------------------------
 export const ADDITEM = "ADDITEM";
 export const REMOVEITEM = "REMOVEITEM"
@@ -17,3 +14,4 @@ export const USERINPUT = "USERINPUT";
 //------------------------------- Item Reviews ---------------------------
 export const GETITEMREVIEWS = "GETITEMREVIEWS";
 export const NEWREVIEW = "NEWREVIEW";
+export const DELETEREVIEW = "DELETEREVIEW";

@@ -1,4 +1,4 @@
-import { GETITEMREVIEWS, NEWREVIEW } from './Types';
+import { GETITEMREVIEWS, NEWREVIEW, DELETEREVIEW } from './Types';
 import axios from 'axios';
 
 
@@ -38,8 +38,11 @@ export const createReview = (formData, itemId) => {
                 }
             })
             console.log('NEW REVIEW ACTION', newReview.data)
+            //-------- Get username from [0] index of returned array ----------
             let username = newReview.data[0]
+            // ------------ Get Review Data from [1] index of returned array
             let review = newReview.data[1].review
+            //----------------- Create one object using spred operator ------------
             const allReviewData = {...username, review }
             console.log('AFTER SPREAD', allReviewData)
             dispatch({
@@ -47,6 +50,25 @@ export const createReview = (formData, itemId) => {
                 payload: allReviewData
             })
             window.alert('Your review has been posted successfully!')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+}
+
+export const deleteReview = (id) => {
+    return async (dispatch) => {
+        try {
+            axios({
+                method: 'delete',
+                url: `${URL}/reviews/delete/${id}`,
+                headers: {'Authorization': sessionStorage.getItem('Bearer')}
+            })
+            console.log('INSIDE ACTION', id)
+            dispatch({
+                type: DELETEREVIEW,
+                payload: id
+            })
         } catch (err) {
             console.log(err)
         }

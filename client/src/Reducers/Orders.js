@@ -24,7 +24,6 @@ export default function(state = initialState, action) {
                 orderDetails: action.payload
             }
         default:
-            console.log('ORDERS REDUCER', state.orders)
         return state;
     }
 };

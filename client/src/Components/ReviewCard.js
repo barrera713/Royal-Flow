@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteReview } from '../Actions/Review';
 
 
 function ReviewCard(props) {
    
-    console.log('PROPS FROM STORE', props.reviews)
-   
 
-    console.log('PROPS INSIDE REVIEWCARD', props.reviews)
+    let activeUser = sessionStorage.getItem('activeUser')
+    console.log('user form storage', activeUser)
     
+    const handleDelete = (id) => {
+        console.log('inside function', id)
+        props.deleteReview(id)
+    }
+
     if(props.reviews === undefined) {
         return(<div>Loading...</div>)
     }
@@ -21,13 +26,13 @@ function ReviewCard(props) {
         </div>
         <div className="card-body">
             <p className="card-title">{i.username} | {i.review.rating}</p>
-                <p className="card-text">{i.review.content}</p>
+            <p className="card-text">{i.review.content}</p>
+            {activeUser === i.username ? <button className="btn btn-outline-danger btn-sm" onClick={() => handleDelete(i.review.id)}>Delete</button> : null }
         </div>
         </div>)
         })
     }
 
-        
     
 }
 
@@ -35,4 +40,4 @@ const mapStateToProps = state => ({
     reviews: state.itemReviews.allItemReviews
 })
 
-export default connect(mapStateToProps)(ReviewCard);
+export default connect(mapStateToProps, { deleteReview })(ReviewCard);

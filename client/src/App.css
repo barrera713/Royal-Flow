@@ -198,6 +198,21 @@
 
 @media screen and (max-width: 1175px) {
 
+  /* -------------------------------------Login and Signup forms  --------------------------------*/
+  .signup-form {
+    width: 100%;
+    padding: 0 7px;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 0 7px;
+  }
+
+  .btn.btn-primary.login {
+    width: 100%;
+  }
+
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
 
   .cart-no-user {
@@ -287,6 +302,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0;
   }
   
   .card-container {

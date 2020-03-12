@@ -43,3 +43,17 @@ exports.getReviews = async (req, res, next) => {
         res.send(err)
     }
 };
+
+exports.deleteReview = async (req, res, next) => {
+    try {
+        Review.destroy({
+            where: {id: req.params.id}
+        })
+        .then(data => {
+            res.json(data)
+        })
+    } catch (err) {
+        console.log(err)
+        res.send(err)
+    }
+}

@@ -33,7 +33,7 @@ exports.loginUser = async (req, res, next) => {
 //---------------------------------------------- Signs Token --------------------------------------------
     jwt.sign({_id: user.id}, process.env.USER_TOKEN, { expiresIn: '1h' },(err, token) => {
         if(err) { console.log(err) }    
-        res.send({'Bearer': token});
+        res.send({'Bearer': token, user });
     });
 };
 
