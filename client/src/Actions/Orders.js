@@ -25,15 +25,18 @@ export const getItemsFromOrder = (id) => {
     console.log('ID', id)
     return async (dispatch) => { 
         try {
-            const result = await axios({
+            await axios({
                 method: 'get',
                 url: `${URL}/cart/order/items/${id}`,
                 headers: {'Authorization': sessionStorage.getItem('Bearer')},
             })
-            let items = result.data.map(i => i.items)
-            dispatch({
-                type: ORDERDETAILS,
-                payload: items
+            .then(res => {
+                console.log('response', res)
+                let items = res.data.map(i => i.items)
+                dispatch({
+                    type: ORDERDETAILS,
+                    payload: items
+                })
             })
         } catch (err) {
             console.log(err)

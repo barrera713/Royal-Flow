@@ -21,19 +21,18 @@ exports.getCartPage = (req, res, next) => {
 
 
 // ------------------------------------------------------ Get Cart Items from Cart ---------------------------------------------
-exports.getItemsFromCart = (req, res, next) => {
+exports.getItemsFromCart = async (req, res, next) => {
     try {
-        Cart.findAll({
+        await Cart.findAll({
             where: {id: req.params.id},
             // Make sure to include the products
             include: [{
             model: Item,
-            as: 'items',
-            required: false,
+            as: 'items'
             }]
         })
         .then(data => {
-            res.send(data)
+            res.json(data)
         })
     } catch (err) {
         res.send(err)
@@ -54,7 +53,7 @@ exports.postCart = async (req, res) => {
         req.body.items.forEach((item) => {
         // Create a obj to create new CartItem
         const newCartItem = {
-          orderId: savedCart.id,
+          cartId: savedCart.id,
           itemId: item.id,
           quantity: item.quantity
         }

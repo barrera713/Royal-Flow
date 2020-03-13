@@ -14,11 +14,11 @@ class UserDashboard extends React.Component {
     render() {
         console.log('ORDER PROPS DASHBOARD:', this.props.allOrders)
         let allOrders = this.props.allOrders;
-        let reversedArr = allOrders.reverse();
+        // let reversedArr = allOrders.reverse();
 
         return(<div>
             <p>Welcome to your dashboard</p>
-            {reversedArr.map(i => {
+            {allOrders.map(i => {
                 return <OrderCard order={i} key={i.id}/>
             })}
         </div>)
