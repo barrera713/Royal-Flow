@@ -1,4 +1,4 @@
-import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT } from '../Actions/Types';
+import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT, NEWORDER } from '../Actions/Types';
 
 const initialState = {
     cartItems: [],
@@ -42,6 +42,10 @@ export default function(state = initialState, action) {
             return {
             ...state, cartCount: state.cartCount + 1
         }
+        case NEWORDER:
+            return {
+                ...state, cartCount: state.cartCount = 0
+            }
         default:
         return state;
     }
