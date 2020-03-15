@@ -1,5 +1,6 @@
 import { GETITEMREVIEWS, NEWREVIEW, DELETEREVIEW } from './Types';
 import axios from 'axios';
+import history from '../history';
 
 
 const URL = 'http://localhost:5000';
@@ -24,38 +25,45 @@ export const getItemReviews = (id) => {
 
 //------------------------------ Create New Review ------------------------------------
 export const createReview = (formData, itemId) => {
-    console.log(itemId)
     return async (dispatch) => {
-        try {
-            const newReview = await axios({
-                method: 'post',
-                url: `${URL}/reviews/new`,
-                headers: {'Authorization': sessionStorage.getItem('Bearer')},
-                data: {
-                    rating: formData.rating,
-                    content: formData.content,
-                    itemId: itemId
-                }
-            })
-            console.log('NEW REVIEW ACTION', newReview.data)
-            //-------- Get username from [0] index of returned array ----------
-            let username = newReview.data[0]
-            // ------------ Get Review Data from [1] index of returned array
-            let review = newReview.data[1].review
-            //----------------- Create one object using spred operator ------------
-            const allReviewData = {...username, review }
-            console.log('AFTER SPREAD', allReviewData)
-            dispatch({
-                type: NEWREVIEW,
-                payload: allReviewData
-            })
-            window.alert('Your review has been posted successfully!')
-        } catch (err) {
-            console.log(err)
+        if(sessionStorage.getItem('Bearer') !== null ) {
+            try {
+                const newReview = await axios({
+                    method: 'post',
+                    url: `${URL}/reviews/new`,
+                    headers: {'Authorization': sessionStorage.getItem('Bearer')},
+                    data: {
+                        rating: formData.rating,
+                        content: formData.content,
+                        itemId: itemId
+                    }
+                })
+                console.log('NEW REVIEW ACTION', newReview.data)
+                //-------- Get username from [0] index of returned array ----------
+                let username = newReview.data[0]
+                // ------------ Get Review Data from [1] index of returned array
+                let review = newReview.data[1].review
+                //----------------- Create one object using spred operator ------------
+                const allReviewData = {...username, review }
+                console.log('AFTER SPREAD', allReviewData)
+                dispatch({
+                    type: NEWREVIEW,
+                    payload: allReviewData
+                })
+                window.alert('Your review has been posted successfully!')
+            } catch (err) {
+                console.log(err)
+            }
+
+        } else {
+            window.alert('Must login to post review')
+            history.push('/login');
         }
     }
-}
+};
 
+
+// ------------------- Delete user review ----------------------
 export const deleteReview = (id) => {
     return async (dispatch) => {
         try {
