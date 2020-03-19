@@ -11,6 +11,7 @@ class ItemReviewCard extends React.Component {
         rating: 0
     }
 
+    
     onStarClick = (nextValue, prevValue) => {
         console.log('[onStarClick]', nextValue)
         this.setState({
@@ -21,6 +22,7 @@ class ItemReviewCard extends React.Component {
 
     submitReview = (e) => {
         e.preventDefault()
+        // ----------- Use state in component to dispatch to Create Review Action ----------------------------
         let formData = {
             "rating": this.state.rating, 
             "content": e.target["content"].value
@@ -35,8 +37,9 @@ class ItemReviewCard extends React.Component {
         
         const { item } = this.props
         
-        console.log('[ITEM REVIEW CARD] props', item)
+        // console.log('[ITEM REVIEW CARD] props', item)
 
+        
         return(<div className="form-and-card-container">
         <div className="card-container">
         <img src={item.imageUrl} className="img-review-display" alt="..." />
