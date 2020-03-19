@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------------------------- NavBar ----------------------------------*/
+.fas.fa-shopping-cart {
+  padding-right: 3px;
+}
+
+.btn-nav-cart {
+  width: 70px;
+  padding: 0px;
+  background-color: #fcc107;
+  border-radius: 5px;
+  transition: .2s
+}
+
+.btn-nav-cart:hover {
+  background-color: #ecb500;
+}
+
+/*----------------------------------------- Item Collection---------------------------------------------*/
+.row.row-cols-1.row-cols-md-3 {
+  width: 100%;
+  margin: 0;
+  padding: 30px 0;
+}
+/*----------------------------------------- Item Card ---------------------------------------------------*/
+.col.mb-4 {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.card-img-top {
+  max-height: 575px;
+  width: auto;
+}
+
+
+.card-body ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.fas.fa-cart-arrow-down {
+  font-size: 20px;
+  padding-right: 12px;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------- Login Form -----------------------------------------*/
+.login-form {
+  margin: 0 auto;
+  width: 35%
+}
+
+/*-----------------------------------------------Cart for no auth user -----------------------------------*/
+.cart-no-user {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 80%;
+  height: 500px;
+  text-align: center;
+}
+
+.cart-no-user ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.cart-no-user button {
+  width: 200px;
+}
+
+
+/*----------------------------------------------------- Cart Item Card ----------------------------------------*/
+
+.card {
+  margin: 4px 0;
+}
+
+.container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.item-img {
+  width: 25%;
+  height: 100%;
+}
+
+.item-img img {
+  width: 150px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.item-description {
+  width: 50%;
+  height: 100%;
+}
+
+.item-price {
+  width: 25%;
+  height: 100%;
+}
+
+.item-description ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 5px;
+}
+
+#remove-item {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn.btn-secondary.btn-sm, .btn.btn-primary.btn-sm {
+  width: 30px;
+  margin: 2px;
+}
+
+/* --------------------------- Cart Page Start ----------------------------- */
+.cart-container {
+  display: flex;
+  padding: 30px;
+}
+
+.items-container {
+  width: 70%;
+}
+
+.total-container {
+  width: 30%;
+  margin: 0 20px;
+}
+
+.btn.btn-warning.cart {
+  width: 100%;
+}
+
+
+/*------------------------------ Order Detail Card --------------------------------- */
+.order-detail-card ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 7px;
+}
+
+.order-detail-img {
+  width: 150px;
+  height: 200px;
+}
+
+
+/*----------------------------------------- Review Page  ---------------------------------*/
+.reviewpage-container {
+  padding: 0 20px;
+}
+
+.form-and-card-container {
+  display: flex;
+  width: 100%;
+  padding: 100px;
+}
+
+.card-container {
+  width: 60%;
+}
+
+.card-body-review {
+  padding: 0;
+  margin: 0;
+}
+
+.form-container {
+  width: 40%;
+}
+
+.form-container form {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.img-review-display {
+  width: 350px;
+  height: auto;
+}
+
+.btn.btn-warning.form {
+  width: 30%;
+}
+
+
+@media screen and (max-width: 1175px) {
+
+  /* -------------------------------------Login and Signup forms  --------------------------------*/
+  .signup-form {
+    width: 100%;
+    padding: 0 7px;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 0 7px;
+  }
+
+  .btn.btn-primary.login {
+    width: 100%;
+  }
+
+  /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
+
+  .cart-no-user {
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+  }
+
+  .cart-no-user ul li {
+    list-style: none;
+    display: block;
+    padding: 5px 0;
+    margin: 0 5px;
+  }
+
+  .cart-no-user button {
+    width: 100%;
+  }
+
+  /*----------------------------------------- Item Card ------------------------------------------------------------*/
+  .card-img-top {
+    height: auto;
+    width: 100%;
+  }
+
+  .col.mb-4 {
+    margin: 0;
+    padding: 0 5px;
+  }
+
+  /* ----------------------------------- Cart Page -------------------*/
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .items-container {
+    width: 100%;
+  }
+  
+  .total-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  /*--------------------------------------- Cart Item Card --------------------------------------- */
+
+  .card {
+    margin: 5px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-description {
+    width: 100%;
+  }
+
+  .item-price {
+    width: 100%;
+  }
+
+  .item-img img {
+    width: 175px;
+    height: 250px;
+    padding-bottom: 20px;
+  }
+
+
+  /* ------------------------------ Review Page -----------------------------------------------  */
+  .reviewpage-container {
+    padding: 0 7px;
+  }
+  
+  .form-and-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .card-container {
+    width: 100%;
+  }
+
+  .card-body-review {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
+  
+  .form-container form {
+    width: 100%;
+    margin: 50px 0;
+  }
+  
+  .img-review-display {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn.btn-warning.form {
+    width: 100%;
+  }
+
+
+}
