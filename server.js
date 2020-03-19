@@ -14,6 +14,7 @@ const cartRoute = require('./routes/cart');
 const reviewRoute = require('./routes/review');
 const cartItem = require('./routes/cartItems');
 const verifyAuth = require('./verifyToken');
+const stripeRoute = require('./routes/stripe');
 
 
 dotenv.config();
@@ -48,6 +49,7 @@ app.use('/shop', itemRoute);
 app.use('/cart', verifyAuth, cartRoute);
 app.use('/cart-item', cartItem);
 app.use('/reviews', reviewRoute);
+app.use('/stripe', stripeRoute);
 
 
 
