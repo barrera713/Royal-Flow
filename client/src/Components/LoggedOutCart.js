@@ -17,7 +17,7 @@ function LoggedOutCart() {
     return(
     <div className="cart-no-user">
         <h5>Your Royal cart is empty</h5>
-        <p>Have an account? Sign in to see your items.</p>
+        <p>Have an account? Sign in to create a cart.</p>
         <ul>
             <li>
                 <button className="btn btn-primary btn-lg" onClick={() => handleLogin()}>Login</button>

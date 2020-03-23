@@ -43,7 +43,7 @@ class SneakerCollection extends React.Component {
 
     return(<div>
       <div className="form-group">
-        <input className="form-control" type="text" onChange={(event) => this.handleUserInput(event)} placeholder="Search for name, size, price..." />
+        <input className="form-control" type="text" onChange={(event) => this.handleUserInput(event)} placeholder="Search..." />
       </div>
       <div className="row row-cols-1 row-cols-md-3">
         {filteredData.map(sneaker => {
