@@ -31,25 +31,6 @@ router.post('/payment', async (req, res, next) => {
     .catch(err => {
         console.log(err)
     })
-    // try {
-    //     const customer = await stripe.customers.create({
-    //         source: token.id,
-    //         email: token.email
-    //     })
-    //     console.log('[CUSTOMER]', customer)
-    //     const charge = await stripe.charges.create({
-    //         amount: total,
-    //         currency: "usd",
-    //         customer: customer.id,
-    //         receipt_email: customer.email,
-    //         description: 'Royal Flow'
-    //     }, {idempotency_Key})
-    //     res.status(200).send('Success', charge);
-    //     console.log('CHARGE', charge)
-    // }
-    // catch(err) {
-    //     console.log('[ERROR]', err)
-    // }
 });
 
 module.exports = router;

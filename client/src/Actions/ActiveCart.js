@@ -54,6 +54,7 @@ export const checkoutCart = (total, items) => {
             payload: res.data
           })
           window.alert('Your order has been successfully placed!')
+          window.location = '/dashboard'
         })
         .catch(err => {
             console.log(err)

@@ -1,7 +1,8 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-
+import { connect } from 'react-redux';
+import { checkoutCart } from '../Actions/ActiveCart';
 
 
 
@@ -21,7 +22,10 @@ const Payment = (props) => {
             }
         })
         .then(res => {
-            console.log('SUCCESS', res)
+            console.log('SUCCESS')
+        })
+        .then(createOrder => {
+            props.checkoutCart(props.total, props.items)
         })
         .catch(err => {
             console.log('ERROR', err)
@@ -39,4 +43,4 @@ const Payment = (props) => {
     )
 }
 
-export default Payment;
+export default connect(null, { checkoutCart })(Payment);
