@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { LoggedOutCart} from '../Components/LoggedOutCart';
 import CartItem from '../Components/CartItem';
 import { checkoutCart } from '../Actions/ActiveCart';
-import StripeBtn from '../Components/stripe';
+import Payment from '../Components/stripe';
+
 
 
 class Cart extends React.Component{
@@ -62,9 +63,9 @@ class Cart extends React.Component{
                         { totalItems > 1 ? <p>Items ({totalItems})</p> : <p>Item ({totalItems})</p> }
                         <hr/>
                         <p>Total ${cartTotal}</p>
-                        <button>
-                        <StripeBtn total={cartTotal}/>
-                        </button>
+                        <div>
+                            <Payment total={cartTotal}/>
+                        </div>
                         {/* <button className="btn btn-warning cart" onClick={() => this.props.checkoutCart(cartTotal, this.props.cart)}>Checkout</button> */}
                     </div>
                 </div>

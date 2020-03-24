@@ -2,34 +2,41 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
-const stripeBtn = (props) => {
-    const publishableKey = process.env.PUB_KEY;
 
-    const onToken = (token) => {
-        const body = {
-            amount: props.total,
-            token
-        }; 
-        axios.post("http://localhost:5000/stripe/checkout", body)
+
+
+const Payment = (props) => {
+
+    const makePayment = (token) => {
+        // const body = { token }
+        const URL = 'http://localhost:5000';
+        return axios({
+            method: 'post',
+            url: `${URL}/stripe/payment`,
+            headers: {"Content-Type": "application/json"},
+            data: {
+                total: props.total,
+                email: token.email,
+                token
+            }
+        })
         .then(res => {
-            console.log('[Response]', res)
+            console.log('SUCCESS', res)
         })
         .catch(err => {
-            console.log('[ERROR]', err)
-        });
-    };
-    return (
+            console.log('ERROR', err)
+        })
+    }
+
+    return(
         <StripeCheckout 
-        label="Checkout"
-        name="Royal Flow"
-        description="Cart total"
-        panelLabel="Confirm" 
-        amount={props.total * 100} 
-        token={onToken}
-        stripeKey={publishableKey}
-        />
+        stripeKey={process.env.REACT_APP_KEY}
+        token={makePayment} 
+        name="Royal Flow" 
+        amount={props.total * 100}>
+        <button className="btn btn-warning">Checkout</button>
+        </StripeCheckout>
     )
-};
+}
 
-export default stripeBtn;
-
+export default Payment;
