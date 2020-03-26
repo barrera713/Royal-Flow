@@ -37,6 +37,18 @@
   width: auto;
 }
 
+.item-flex-container {
+  display: flex;
+}
+
+.star-rating {
+  padding: 20px 0 0 80px;
+  width: 50%;
+}
+
+.star-rating p {
+  font-size: 14px;
+}
 
 .card-body ul li {
   list-style: none;
@@ -47,6 +59,10 @@
   font-size: 20px;
   padding-right: 12px;
   cursor: pointer;
+}
+
+.add-to-cart-btn {
+  padding: 10px;
 }
 
 /*-------------------------------------------------- Login Form -----------------------------------------*/
@@ -124,7 +140,7 @@
   margin: 2px;
 }
 
-/* --------------------------- Cart Page Start ----------------------------- */
+/* --------------------------- Cart Page ----------------------------- */
 .cart-container {
   display: flex;
   padding: 30px;
@@ -245,6 +261,30 @@
     padding: 0 5px;
   }
 
+  .item-flex-container {
+    display: flex;
+  }
+  
+  .star-rating {
+    padding: 20px;
+    width: 50%;
+  }
+  
+  .star-rating p {
+    font-size: 14px;
+  }
+
+  .btn.btn-warning.add-to-cart {
+    width: 100%;
+    padding: 12px;
+    margin: 0 auto;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    /* background: red; */
+  }
+
   /* ----------------------------------- Cart Page -------------------*/
   .cart-container {
     display: flex;
@@ -259,6 +299,10 @@
   .total-container {
     width: 100%;
     margin: 0;
+  }
+
+  .btn.btn-warning {
+    width: 100%;
   }
 
   /*--------------------------------------- Cart Item Card --------------------------------------- */

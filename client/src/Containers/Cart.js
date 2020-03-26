@@ -66,7 +66,6 @@ class Cart extends React.Component{
                         <div>
                             <Payment total={cartTotal} items={this.props.cart} />
                         </div>
-                        {/* <button className="btn btn-warning cart" onClick={() => this.props.checkoutCart(cartTotal, this.props.cart)}>Checkout</button> */}
                     </div>
                 </div>
             )

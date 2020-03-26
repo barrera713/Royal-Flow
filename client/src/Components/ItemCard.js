@@ -36,30 +36,31 @@ const ItemCard = (props) => {
         }
     };
 
-    // const handleViewReviews = (item) => {
-    //     props.getItemReviews(item.id) 
-    // }
 
     return(<div className="col mb-4" key={item.id}>
         <div className="card h-100">
             <img src={item.imageUrl} className="card-img-top" alt="..." />
-            <div className="card-body">
-            <p className="card-text">{item.description}</p>
-            {item.size ? <p>Size {item.size} | Price ${item.price}</p> : <p>Price ${item.price}</p>}
-            <button type="button" className="btn btn-warning" onClick={() => handleAddItem(item)} >
-                <i className="fas fa-cart-arrow-down"></i>
-                Add to Cart
-            </button>
-            </div>
-            <div>
-            <Link to={{pathname: `/reviews/${item.id}`, state: {item: item.id } }}>
-                        <StarRatingComponent 
-                        value={aveverageRating} 
-                        starCount={5} 
-                        editing={false}
-                        />
-                        <button type="button" className="btn btn-primary">Reviews</button>
+            <div className="item-flex-container">
+                <div className="card-body">
+                <p className="card-text">{item.description}</p>
+                {item.size ? <p>Size {item.size} | ${item.price}</p> : <p>Price ${item.price}</p>}
+                </div>
+                <div className="star-rating">
+                <StarRatingComponent 
+                            value={aveverageRating} 
+                            starCount={5} 
+                            editing={false}
+                            />
+                <Link to={{pathname: `/reviews/${item.id}`, state: {item: item.id } }}>
+                    <p>total ratings {ratings.length}</p>
                 </Link>
+                </div>
+            </div>
+            <div className="add-to-cart-btn">
+                <button type="button" className="btn btn-warning add-to-cart" onClick={() => handleAddItem(item)} >
+                        <i className="fas fa-cart-arrow-down"></i>
+                        Add to Cart
+                </button>
             </div>
         </div>
     </div>)
