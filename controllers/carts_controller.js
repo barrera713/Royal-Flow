@@ -41,7 +41,7 @@ exports.getItemsFromCart = async (req, res, next) => {
 
 
 
-//-------------------------------------------------- Create User Cart -------------------------------
+//-------------------------------------------------- Create User Cart ---------------------------------------------------
 exports.postCart = async (req, res) => {
     console.log('REQ', req.user)
     const newCart = new Cart({

@@ -22,7 +22,7 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 orderDetails: action.payload
-            }
+        }
         default:
         return state;
     }

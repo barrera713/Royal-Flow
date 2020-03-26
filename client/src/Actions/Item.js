@@ -7,6 +7,7 @@ export const getAllItems = () => {
     return async (dispatch) => {
         try {
         const items = await axios.get(`${URL}/shop/all-items`)
+        console.log('[ITEM ACTION]', items)
         dispatch({
             type: ALLDATA,
             payload: items

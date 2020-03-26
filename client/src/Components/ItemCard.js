@@ -4,10 +4,21 @@ import { addItem, cartCount } from '../Actions/ActiveCart';
 import { getItemReviews } from '../Actions/Review';
 import history from '../history';
 import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
+
+
 
 const ItemCard = (props) => {
 
     const { item } = props;
+
+    // console.log('[inside ItemCard]', item.itemReviews)
+    let ratings = item.itemReviews.map(i => i.review.rating)
+    console.log('[RATINGS]', ratings)
+    // ---------------- Get average rating for each item -----------------------------
+    let aveverageRating = ratings.reduce((total, rating) => total += rating ) / ratings.length;
+    console.log('[AVERAGE RATING]', aveverageRating)
+
 
     const handleAddItem = (item) => {
         let userLoggedIn = sessionStorage.getItem('Bearer');
@@ -39,9 +50,16 @@ const ItemCard = (props) => {
                 <i className="fas fa-cart-arrow-down"></i>
                 Add to Cart
             </button>
+            </div>
+            <div>
             <Link to={{pathname: `/reviews/${item.id}`, state: {item: item.id } }}>
-                <button type="button" className="btn btn-primary">Reviews</button>
-            </Link>
+                        <StarRatingComponent 
+                        value={aveverageRating} 
+                        starCount={5} 
+                        editing={false}
+                        />
+                        <button type="button" className="btn btn-primary">Reviews</button>
+                </Link>
             </div>
         </div>
     </div>)

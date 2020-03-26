@@ -7,6 +7,7 @@ export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 export const CARTCOUNT = "CARTCOUNT";
 export const NEWORDER = "NEWORDER";
+//--------------------------- Dashboard -------------------------------------
 export const ALLORDERS = "ALLORDERS";
 export const ORDERDETAILS = "ORDERDETAILS";
 // ----------------------------- User Search Input ------------------------

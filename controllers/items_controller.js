@@ -1,5 +1,6 @@
 const Item = require('../models/Item');
-
+const User = require('../models/User');
+const Review = require('../models/Review');
 
 
 //--------------------------------------------- Create Item -----------------------------------------
@@ -23,13 +24,16 @@ exports.postAddItem = async (req, res, next) => {
 
 
 //--------------------------------------------- Get all items ------------------------------------
-exports.getAllItems = (req, res, next) => {
-    Item.findAll()
-    .then(items => {
-        res.json(items)
-    })
-    .catch(err => {
+exports.getAllItems = async (req, res, next) => {
+    try {
+        const items = await Item.findAll({
+            include: [{
+                model: User,
+                as: 'itemReviews'
+            }]
+        })
+        res.status(200).json(items)
+    } catch(err)  {
         if(err) return res.status(400).send('ERROR', err)
-    })
-    
+    }
 };
