@@ -24,18 +24,45 @@
   background-color: #ecb500;
 }
 
+/* --------------------------------------------------- Main Body -------------------------- */
 
 .intro-img {
-  /* background: red; */
   width: 100vw;
-  /* height: 100vh; */
 }
 
 .intro-img img {
-  /* height: 100%; */
   width: 100%;
 }
 
+.mission-statement {
+  display: flex;
+  padding: 140px;
+  background-color: rgb(11, 11, 11); 
+}
+
+.mission-statement ul li {
+  list-style: none;
+}
+
+.mission-statement p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.brand {
+  width: 50%;
+}
+
+.brand h2 {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.statement {
+  width: 50%;
+}
 
 /*----------------------------------------- Item Collection---------------------------------------------*/
 .row.row-cols-1.row-cols-md-3 {
@@ -231,8 +258,37 @@
 
 @media screen and (max-width: 1175px) {
   /* --------------------------- Main Body ------------------- */
-  .intro-img {
-    /* background-image: url('./images/jordanhigh1.jpg'); */
+
+  .mission-statement {
+    display: flex;
+    flex-direction: column;
+    padding: 90px;
+    background-color: rgb(11, 11, 11); 
+    text-align: center;
+  }
+  
+  .mission-statement ul li {
+    padding: 2px 0;
+  }
+  
+  .mission-statement p {
+    font-size: 12px;
+    color: #ffffff;
+  }
+  
+  .brand {
+    width: 100%;
+  }
+  
+  .brand h2 {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+  }
+  
+  .statement {
+    width: 100%;
   }
 
 

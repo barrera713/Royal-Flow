@@ -16,6 +16,24 @@ class MainBody extends React.Component {
                 <ItemCollection />
                 {/* <HighestRated /> */}
                 <HottestReleases />
+            <div className="mission-statement">
+                <div className="brand">
+                    <h2>ROYAL FLOW</h2>
+                </div>
+                <div className="statement">
+                    <ul>
+                        <li>
+                            <p>Shop Sneakers Shirts, and Accessories</p>
+                        </li>
+                        <li>
+                            <p>Quality is Our Name</p>
+                        </li>
+                        <li>
+                            <p>Always Authentic</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
                 <Tops />
                 <Accessories />
             </div>
