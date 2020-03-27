@@ -17,13 +17,13 @@ function NavBar(props) {
 
   return( <div className="App">
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <Link to="/" className="navbar-brand"><h4>Royal Flow</h4></Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarText">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item">
+    <div className="navbar-nav mr-auto">
+      <Link to="/" className="navbar-brand"><h4>Royal Flow</h4></Link>
+      {/* <li className="nav-item">
         <Link to="/sneakers" className="nav-link">Sneakers</Link>
       </li>
       <li className="nav-item">
@@ -31,8 +31,8 @@ function NavBar(props) {
       </li>
       <li className="nav-item">
       <Link to="accessories" className="nav-link" >Accessories</Link>
-      </li>
-    </ul>
+      </li> */}
+    </div>
     <span className="navbar-text">
       <ul className="navbar-nav mr-auto">
         <li>
@@ -45,7 +45,7 @@ function NavBar(props) {
         </li>
         <li>
           { userLoggedIn ? null :
-          <Link to="/signup" className="nav-link">SignUp</Link>}
+          <Link to="/signup" className="nav-link">Join Us</Link>}
         </li>
         <li className="nav-item">
           <Link to="/cart" className="nav-link">

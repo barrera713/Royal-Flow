@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 /*------------------------------------------- NavBar ----------------------------------*/
 .fas.fa-shopping-cart {
   padding-right: 3px;
@@ -19,6 +23,19 @@
 .btn-nav-cart:hover {
   background-color: #ecb500;
 }
+
+
+.intro-img {
+  /* background: red; */
+  width: 100vw;
+  /* height: 100vh; */
+}
+
+.intro-img img {
+  /* height: 100%; */
+  width: 100%;
+}
+
 
 /*----------------------------------------- Item Collection---------------------------------------------*/
 .row.row-cols-1.row-cols-md-3 {
@@ -213,8 +230,13 @@
 
 
 @media screen and (max-width: 1175px) {
+  /* --------------------------- Main Body ------------------- */
+  .intro-img {
+    /* background-image: url('./images/jordanhigh1.jpg'); */
+  }
 
-  /* -------------------------------------Login and Signup forms  --------------------------------*/
+
+  /* ------------------------------------- Login and Signup forms  --------------------------------*/
   .signup-form {
     width: 100%;
     padding: 0 7px;

@@ -13,10 +13,17 @@ const ItemCard = (props) => {
     const { item } = props;
 
     // console.log('[inside ItemCard]', item.itemReviews)
+
     let ratings = item.itemReviews.map(i => i.review.rating)
     console.log('[RATINGS]', ratings)
-    // ---------------- Get average rating for each item -----------------------------
-    let aveverageRating = ratings.reduce((total, rating) => total += rating ) / ratings.length;
+    // ---------------- Checks if Rating arr is NOT empty then gets average rating for each item -----------------------------
+    const checkRatings = (arr) => {
+        if(arr.length > 0) {
+            return arr.reduce((total, rating) => total += rating ) /arr.length
+        }
+    };
+
+    let aveverageRating = checkRatings(ratings)
     console.log('[AVERAGE RATING]', aveverageRating)
 
 
@@ -52,7 +59,7 @@ const ItemCard = (props) => {
                             editing={false}
                             />
                 <Link to={{pathname: `/reviews/${item.id}`, state: {item: item.id } }}>
-                    <p>total ratings {ratings.length}</p>
+                    {ratings.length > 0 ? <p>total ratings {ratings.length}</p> : <p>Be the first to review!</p>}
                 </Link>
                 </div>
             </div>
