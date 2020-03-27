@@ -8,6 +8,4 @@ router.post('/add-item', items_controller.postAddItem);
 router.get('/all-items', items_controller.getAllItems);
 
 
-
-
 module.exports = router;

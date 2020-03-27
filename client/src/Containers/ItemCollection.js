@@ -8,7 +8,7 @@ import { userSearchInput } from '../Actions/SearchBar';
 
 class ItemCollection extends React.Component {
   //----------------------- Fetch All Item Data
-  async componentDidMount() {
+  componentDidMount() {
     this.props.getAllItems();
   }
 
@@ -42,9 +42,9 @@ class ItemCollection extends React.Component {
           <input className="form-control" type="text" onChange={(event) => this.handleUserInput(event)} placeholder="Search..." />
         </div>
         <div className="row row-cols-1 row-cols-md-3">
-        {filteredData.map(i => {
+        {userInput.length > 1 ? filteredData.map(i => {
           return <ItemCard item={i} key={i.id}/>
-        })}
+        }) : null }
         </div>
     </div>)
   };

@@ -23,15 +23,6 @@ function NavBar(props) {
   <div className="collapse navbar-collapse" id="navbarText">
     <div className="navbar-nav mr-auto">
       <Link to="/" className="navbar-brand"><h4>Royal Flow</h4></Link>
-      {/* <li className="nav-item">
-        <Link to="/sneakers" className="nav-link">Sneakers</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/tops" className="nav-link">Tops</Link>
-      </li>
-      <li className="nav-item">
-      <Link to="accessories" className="nav-link" >Accessories</Link>
-      </li> */}
     </div>
     <span className="navbar-text">
       <ul className="navbar-nav mr-auto">

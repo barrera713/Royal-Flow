@@ -15,16 +15,17 @@ const ItemCard = (props) => {
     // console.log('[inside ItemCard]', item.itemReviews)
 
     let ratings = item.itemReviews.map(i => i.review.rating)
-    console.log('[RATINGS]', ratings)
+    // console.log('[RATINGS]', ratings)
     // ---------------- Checks if Rating arr is NOT empty then gets average rating for each item -----------------------------
     const checkRatings = (arr) => {
         if(arr.length > 0) {
-            return arr.reduce((total, rating) => total += rating ) /arr.length
+            return arr.reduce((total, rating) => total += rating ) / arr.length
         }
     };
+    
 
     let aveverageRating = checkRatings(ratings)
-    console.log('[AVERAGE RATING]', aveverageRating)
+    // console.log('[AVERAGE RATING]', aveverageRating)
 
 
     const handleAddItem = (item) => {

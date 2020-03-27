@@ -1,5 +1,9 @@
 import React from 'react';
+// import HighestRated from './Containers/HighestRated';
 import ItemCollection from './Containers/ItemCollection';
+import Accessories from './Containers/Accessories';
+import Tops from './Containers/Tops';
+import HottestReleases from './Containers/HottestReleases';
 
 class MainBody extends React.Component {
 
@@ -9,8 +13,11 @@ class MainBody extends React.Component {
                 <img src={'intro.jpg'} alt="" />
             </div>
             <div>
-                <h3>Highest Rated</h3>
                 <ItemCollection />
+                {/* <HighestRated /> */}
+                <HottestReleases />
+                <Tops />
+                <Accessories />
             </div>
         </div>)
     }
