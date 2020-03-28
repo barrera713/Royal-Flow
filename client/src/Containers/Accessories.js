@@ -19,7 +19,7 @@ class Accessories extends React.Component {
 
 
         return(<div>
-            <p>Accessories</p>
+            <h2 className="section-header">Accessories</h2>
             <div className="row row-cols-1 row-cols-md-3">
             {accessories.map(i => {
               return <ItemCard item={i} key={i.id}/>

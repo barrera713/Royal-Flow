@@ -38,9 +38,11 @@ class ItemCollection extends React.Component {
     })
 
     return (<div>
-        <div className="form-group">
-          <input className="form-control" type="text" onChange={(event) => this.handleUserInput(event)} placeholder="Search..." />
+      <div className="search-bar-container">
+        <div className="form-group search">
+          <input className="form-control" type="text" onChange={(event) => this.handleUserInput(event)} placeholder="Search for products..." />
         </div>
+      </div>
         <div className="row row-cols-1 row-cols-md-3">
         {userInput.length > 1 ? filteredData.map(i => {
           return <ItemCard item={i} key={i.id}/>

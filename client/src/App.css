@@ -7,10 +7,19 @@
   font-family: 'Roboto', sans-serif;
 }
 
+
 /*------------------------------------------- NavBar ----------------------------------*/
 .fas.fa-shopping-cart {
   padding-right: 3px;
 }
+
+.navBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 
 .btn-nav-cart {
   width: 70px;
@@ -25,6 +34,10 @@
 }
 
 /* --------------------------------------------------- Main Body -------------------------- */
+
+.main-body-container {
+ padding-bottom: 2.5em;
+}
 
 .intro-img {
   width: 100vw;
@@ -64,12 +77,57 @@
   width: 50%;
 }
 
+.section-header {
+  letter-spacing: 2px;
+  padding: 20px;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+/*----------------------------- Footer --------------------*/
+.footer {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  left:0;
+  bottom:0;
+  right:0;
+  padding: 100px;
+  margin-top: 20px;
+  background-color: rgb(11, 11, 11); 
+}
+
+.social-links ul li {
+  list-style: none;
+  display: inline;
+  padding: 5px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.footer p {
+  color: #ffffff;
+  font-size: 12px;
+}
+
 /*----------------------------------------- Item Collection---------------------------------------------*/
 .row.row-cols-1.row-cols-md-3 {
   width: 100%;
   margin: 0;
   padding: 30px 0;
 }
+
+.search-bar-container {
+  padding: 50px;
+}
+
+.form-group.search {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow : 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+}
+
 /*----------------------------------------- Item Card ---------------------------------------------------*/
 .col.mb-4 {
   margin: 0;
@@ -109,10 +167,12 @@
   padding: 10px;
 }
 
-/*-------------------------------------------------- Login Form -----------------------------------------*/
-.login-form {
-  margin: 0 auto;
-  width: 35%
+/*-------------------------------------------------- Login and Sign Up Forms -----------------------------------------*/
+.login-form, .signup-form {
+  margin: 30px auto;
+  width: 35%;
+  padding: 50px;
+  height: 490px;
 }
 
 /*-----------------------------------------------Cart for no auth user -----------------------------------*/
@@ -256,6 +316,7 @@
 }
 
 
+
 @media screen and (max-width: 1175px) {
   /* --------------------------- Main Body ------------------- */
 
@@ -291,14 +352,17 @@
     width: 100%;
   }
 
-
-  /* ------------------------------------- Login and Signup forms  --------------------------------*/
-  .signup-form {
-    width: 100%;
-    padding: 0 7px;
+  .section-header {
+    letter-spacing: 2px;
+    padding: 0 10px;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
   }
 
-  .login-form {
+
+  /* ------------------------------------- Login and Signup forms  --------------------------------*/
+  .signup-form, .login-form {
     width: 100%;
     padding: 0 7px;
   }
@@ -306,6 +370,8 @@
   .btn.btn-primary.login {
     width: 100%;
   }
+
+
 
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
 
@@ -326,6 +392,17 @@
 
   .cart-no-user button {
     width: 100%;
+  }
+
+  /*---------------------------------------- Item Collection --------------------------- */
+
+  .search-bar-container {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .form-group.search {
+    width: 90%;
   }
 
   /*----------------------------------------- Item Card ------------------------------------------------------------*/

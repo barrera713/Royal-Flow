@@ -18,8 +18,7 @@ class Login extends React.Component {
 
     render() {
 
-        return(
-        <form className="login-form" onSubmit={this.loginForm}>
+        return(<form className="login-form" onSubmit={this.loginForm}>
             <div className="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />

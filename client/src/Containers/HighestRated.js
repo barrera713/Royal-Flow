@@ -17,7 +17,7 @@ class HighestRated extends React.Component {
 
 
         return(<div>
-            <p>Highest Rated</p>
+            <h2 className="section-header">Highest Rated</h2>
             <div className="row row-cols-1 row-cols-md-3">
             {this.props.items.map(i => {
               return <ItemCard item={i} key={i.id}/>

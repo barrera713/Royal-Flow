@@ -11,6 +11,7 @@ class Cart extends React.Component{
 
 
     render() {
+        window.scrollTo(0, 0);
     // ------------------------ Checks for User auth -----------------------------------------------------------------------------
         const userLoggedIn = sessionStorage.getItem('Bearer');
 

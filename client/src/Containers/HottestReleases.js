@@ -19,7 +19,7 @@ class HottestReleases extends React.Component {
 
 
         return(<div>
-            <p>Hottest Release</p>
+            <h2 className="section-header">Hottest Release</h2>
             <div className="row row-cols-1 row-cols-md-3">
             {hottesReleases.map(i => {
               return <ItemCard item={i} key={i.id}/>

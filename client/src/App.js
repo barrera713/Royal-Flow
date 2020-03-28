@@ -9,6 +9,8 @@ import UserDashboard from './Containers/UserDashboard';
 import OrderDetails from './Containers/OrderDetails';
 import ItemReviews from './Containers/ItemReviews';
 import MainBody from './MainBody';
+import Footer from './Components/Footer';
+
 
 
 
@@ -28,6 +30,7 @@ function App() {
      <Route exact path="/reviews/:id" component={ItemReviews} />
     </Switch>
     </Router>
+    <Footer />
    </div>
   );
 }

@@ -8,7 +8,7 @@ import HottestReleases from './Containers/HottestReleases';
 class MainBody extends React.Component {
 
     render() {
-        return(<div>
+        return(<div className="main-body-container">
             <div className="intro-img">
                 <img src={'intro.jpg'} alt="" />
             </div>

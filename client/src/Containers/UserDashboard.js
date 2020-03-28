@@ -7,6 +7,7 @@ import OrderCard from '../Components/OrderCard';
 class UserDashboard extends React.Component {
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.getUserOrders()
     }
     
@@ -15,7 +16,7 @@ class UserDashboard extends React.Component {
         let reversedArr = allOrders.reverse();
         return(<div>
             <div>
-            <p>Order History</p>
+            <h2 className="section-header">Order History</h2>
             {reversedArr.map(i => {
                 return <OrderCard order={i} key={i.id}/>
             })}

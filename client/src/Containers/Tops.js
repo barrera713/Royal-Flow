@@ -19,7 +19,7 @@ class Tops extends React.Component {
 
 
         return(<div>
-            <p>Tops</p>
+            <h2 className="section-header">Shirts</h2>
             <div className="row row-cols-1 row-cols-md-3">
             {tops.map(i => {
               return <ItemCard item={i} key={i.id}/>
