@@ -8,7 +8,6 @@ function OrderDetails(props) {
     console.log('PROPS IN ORDER DETAILS', props.details)
   
     return(<div>
-        <p>Details</p>
         {props.details.map(item => {
             return <OrderDetailCard key={item} item={item} />
         })}

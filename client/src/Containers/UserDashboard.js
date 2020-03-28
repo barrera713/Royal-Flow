@@ -14,12 +14,14 @@ class UserDashboard extends React.Component {
     render() {
         let allOrders = this.props.allOrders;
         let reversedArr = allOrders.reverse();
-        return(<div className="dashboard-container">
-            <div>
-            <h2 className="section-header">Order History</h2>
-            {reversedArr.map(i => {
-                return <OrderCard order={i} key={i.id}/>
-            })}
+        return(<div className="dashboard-parent-container">
+            <div className="dashboard-container">
+                <div>
+                <h2 className="section-header">Order History</h2>
+                {reversedArr.map(i => {
+                    return <OrderCard order={i} key={i.id}/>
+                })}
+                </div>
             </div>
         </div>)
     }

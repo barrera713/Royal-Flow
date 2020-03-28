@@ -14,7 +14,7 @@ function NavBar(props) {
   // console.log('NAVBAR PROPS', props.counter)
 //----------------------------------------------- Checks for user auth ----------------------------------------------------------------------
   let userLoggedIn = sessionStorage.getItem('Bearer');
-
+ 
   return( <div className="navBar">
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

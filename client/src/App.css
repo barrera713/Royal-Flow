@@ -20,6 +20,20 @@
   z-index: 1;
 }
 
+.navbar-brand {
+  margin-left: 80px;
+}
+
+.navbar-brand h4 {
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbar-text {
+  margin-right: 80px;
+}
 
 .btn-nav-cart {
   width: 70px;
@@ -379,13 +393,23 @@
 .img-review-display {
   width: 350px;
   height: auto;
+  padding-bottom: 10px;
 }
 
 .btn.btn-warning.form {
   width: 30%;
 }
 
+
+.card-body-review {
+  padding: 10px 0;
+}
+
 /*----------------------------------- Dash Board ----------------------- */
+.dashboard-parent-container {
+  min-height: 70vh;
+}
+
 .dashboard-container {
   padding: 5px 0;
   margin-bottom: 350px;
@@ -647,6 +671,10 @@
   }
 
   /* ----------------------- Dashboard  ----------------*/
+  .dashboard-parent-container {
+    min-height: 80vh;
+  }
+
   .btn.btn-primary.dashboard, .btn.btn-primary.details {
     width: 100%;
     margin: 10px 0;

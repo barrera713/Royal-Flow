@@ -45,7 +45,7 @@ class ItemReviewCard extends React.Component {
         <img src={item.imageUrl} className="img-review-display" alt="..." />
         <div className="card-body-review">
         <p className="card-text">{item.description}</p>
-        <p className="card-text">Price ${item.price}</p>
+        <p className="card-text">${item.price}</p>
         <p className="card-text">Size {item.size}</p>
         </div>
       </div>
