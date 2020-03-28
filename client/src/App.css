@@ -24,13 +24,13 @@
 .btn-nav-cart {
   width: 70px;
   padding: 0px;
-  background-color: #fcc107;
+  background-color: #ffffff;
   border-radius: 5px;
   transition: .2s
 }
 
 .btn-nav-cart:hover {
-  background-color: #ecb500;
+  border-color: black;
 }
 
 /* --------------------------------------------------- Main Body -------------------------- */
@@ -100,14 +100,14 @@
 .social-links ul li {
   list-style: none;
   display: inline;
-  padding: 5px;
+  padding: 0 12px;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .footer p {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /*----------------------------------------- Item Collection---------------------------------------------*/
@@ -125,7 +125,8 @@
   width: 50%;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow : 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
 /*----------------------------------------- Item Card ---------------------------------------------------*/
@@ -165,6 +166,24 @@
 
 .add-to-cart-btn {
   padding: 10px;
+  font-size: 20px;
+}
+
+.btn.btn-warning.add-to-cart, .btn.btn-warning.form {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  -webkit-background-color: #ffffff;
+  -webkit-border-color: #ffffff;
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out .25s;
+}
+
+.btn.btn-warning.add-to-cart:hover, .btn.btn-warning.form {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
 }
 
 /*-------------------------------------------------- Login and Sign Up Forms -----------------------------------------*/
@@ -173,6 +192,18 @@
   width: 35%;
   padding: 50px;
   height: 490px;
+}
+
+.btn.btn-primary.login {
+  width: 30%;
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out .25s;
+}
+
+.btn.btn-primary.login {
+  box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
 }
 
 /*-----------------------------------------------Cart for no auth user -----------------------------------*/
@@ -234,15 +265,44 @@
   padding: 5px;
 }
 
-#remove-item {
+#remove-item p {
   cursor: pointer;
   font-size: 12px;
 }
 
+#remove-item p:hover {
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+
 .btn.btn-secondary.btn-sm, .btn.btn-primary.btn-sm {
   width: 30px;
   margin: 2px;
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out .25s;
 }
+
+.btn.btn-secondary.btn-sm:hover, .btn.btn-primary.btn-sm:hover {
+  box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.btn.btn-warning.checkout {
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out .25s;
+  background-color: rgba(255, 145, 0, 0.733);
+  border-color: none;
+}
+
+.btn.btn-warning.checkout:hover {
+  box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow : 0px 2.5px 4.5px 0px rgba(0, 0, 0, 0.75);
+}
+
 
 /* --------------------------- Cart Page ----------------------------- */
 .cart-container {
@@ -259,8 +319,12 @@
   margin: 0 20px;
 }
 
-.btn.btn-warning.cart {
-  width: 100%;
+/* ------------------------------ Empty Cart ---------------------------------------- */
+.empty-cart {
+  text-align: center;
+  padding: 90px;
+  margin: 100px;
+  height: 400px;
 }
 
 
@@ -274,6 +338,12 @@
 .order-detail-img {
   width: 150px;
   height: 200px;
+}
+
+.btn.btn-primary.details, .btn.btn-primary.dashboard {
+  width: 15%;
+  box-shadow : 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -315,6 +385,11 @@
   width: 30%;
 }
 
+/*----------------------------------- Dash Board ----------------------- */
+.dashboard-container {
+  padding: 5px 0;
+  margin-bottom: 350px;
+}
 
 
 @media screen and (max-width: 1175px) {
@@ -360,17 +435,49 @@
     font-weight: 500;
   }
 
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    left:0;
+    bottom:0;
+    right:0;
+    padding: 50px 0;
+    background-color: rgb(11, 11, 11); 
+  }
+  
+  .social-links ul li {
+    list-style: none;
+    display: inline;
+    padding: 0 12px;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .footer p {
+    color: #ffffff;
+    font-size: 12px;
+  }
+
 
   /* ------------------------------------- Login and Signup forms  --------------------------------*/
-  .signup-form, .login-form {
+  .signup-form {
     width: 100%;
-    padding: 0 7px;
+    height: 80vh;
+    padding: 0 10px;
+    margin-bottom: -10px;
+  }
+  
+  .login-form {
+    width: 100%;
+    height: 80vh;
+    padding: 0 10px;
+    margin-bottom: -50px;
   }
 
   .btn.btn-primary.login {
     width: 100%;
   }
-
 
 
   /*-------------------------------------- Cart With No Auth User  ---------------------------------------*/
@@ -433,12 +540,9 @@
     width: 100%;
     padding: 12px;
     margin: 0 auto;
+    border-color: none;
   }
 
-  .add-to-cart-btn {
-    width: 100%;
-    /* background: red; */
-  }
 
   /* ----------------------------------- Cart Page -------------------*/
   .cart-container {
@@ -458,6 +562,17 @@
 
   .btn.btn-warning {
     width: 100%;
+  }
+
+  .empty-cart {
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 350px;
+    height: 200px;
+  }
+
+  .empty-cart h4 {
+    padding: 100px 0;
   }
 
   /*--------------------------------------- Cart Item Card --------------------------------------- */
@@ -531,5 +646,15 @@
     width: 100%;
   }
 
+  /* ----------------------- Dashboard  ----------------*/
+  .btn.btn-primary.dashboard, .btn.btn-primary.details {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .dashboard-container {
+    padding: 20px 0;
+    margin-bottom: 100px;
+  }
 
 }

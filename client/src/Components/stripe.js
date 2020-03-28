@@ -38,7 +38,7 @@ const Payment = (props) => {
         token={makePayment} 
         name="Royal Flow" 
         amount={props.total * 100}>
-        <button className="btn btn-warning">Checkout</button>
+        <button className="btn btn-warning checkout">Checkout</button>
         </StripeCheckout>
     )
 }

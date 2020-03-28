@@ -22,7 +22,6 @@ class ItemReviews extends React.Component {
         console.log('REVIEWS: inside ItemReview', this.props.item)
         
         return(<div className="reviewpage-container">
-            <p>Review Page</p>
                 <ItemReviewCard item={this.props.item}/>
             <div>
             <ReviewCard />

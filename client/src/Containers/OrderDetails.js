@@ -13,7 +13,7 @@ function OrderDetails(props) {
             return <OrderDetailCard key={item} item={item} />
         })}
         <Link to="/dashboard">
-            <button className="btn btn-primary">Back to Dashboard</button>
+            <button className="btn btn-primary dashboard">Back to Dashboard</button>
         </Link>
     </div>)
 }

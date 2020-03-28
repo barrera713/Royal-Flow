@@ -6,9 +6,15 @@ const Footer = () => {
     return(<div className="footer">
         <div className="social-links">
             <ul>
-                <li>IG</li>
-                <li>FB</li>
-                <li>TW</li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fab fa-facebook"></i>
+                </li>
+                <li>
+                    <i class="fab fa-twitter"></i>
+                </li>
             </ul>
         </div>
         <div className="copyrights">

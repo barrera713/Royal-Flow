@@ -48,8 +48,8 @@ class Cart extends React.Component{
 
         // -------------------------------------- Conditional Rendering for whether Cart is empty or not ----------------------------------------------
         if(this.props.cart.length === 0 && userLoggedIn) {
-            return<div>
-                <h4>Your Royal cart is empty.</h4>
+            return<div className="empty-cart">
+                <h4>Your Royal Bag is empty.</h4>
             </div>
         } else { 
             return(

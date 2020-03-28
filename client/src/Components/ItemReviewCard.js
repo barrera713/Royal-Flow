@@ -57,21 +57,11 @@ class ItemReviewCard extends React.Component {
                 value={this.state.rating}
                 onStarClick={this.onStarClick.bind(this)}
                 />
-                {/* <div className="form-group">
-                    <label>Rating</label>
-                    <select className="form-control" name="rating">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    </select>
-                </div> */}
                 <div className="form-group">
                     <label >Tell us what you think</label>
                     <textarea className="form-control" name="content"></textarea>
                 </div>
-                    <button className="btn btn-warning form" type="submit" >Submit</button>
+                    <button className="btn btn-warning form" type="submit">Submit</button>
             </form>
         </div>
       </div>)

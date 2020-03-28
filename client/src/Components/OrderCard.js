@@ -21,7 +21,7 @@ function OrderCard(props) {
         <div className="card-body">
             <p>{formatDate}</p>
             <p>$ {order.total}</p>
-           <Link to={`/details/${order.id}`} className="btn btn-primary" onClick={ () => getItems(order) }>Details</Link>
+           <Link to={`/details/${order.id}`} className="btn btn-primary details" onClick={ () => getItems(order) }>Details</Link>
         </div>
     </div>
     </div>)
