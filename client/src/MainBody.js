@@ -1,5 +1,4 @@
 import React from 'react';
-// import HighestRated from './Containers/HighestRated';
 import ItemCollection from './Containers/ItemCollection';
 import Accessories from './Containers/Accessories';
 import Tops from './Containers/Tops';
@@ -14,7 +13,6 @@ class MainBody extends React.Component {
             </div>
             <div>
                 <ItemCollection />
-                {/* <HighestRated /> */}
                 <HottestReleases />
             <div className="mission-statement">
                 <div className="brand">

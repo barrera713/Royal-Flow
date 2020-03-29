@@ -26,7 +26,7 @@ class ItemCollection extends React.Component {
       return <h3>Loading...</h3>
     }
     
-    console.log('[ITEMS] props', this.props.items)
+    // console.log('[ITEMS] props', this.props.items)
     let userInput = this.props.searchBar
 
     //----------- function that filter item description on user input ------------------------------

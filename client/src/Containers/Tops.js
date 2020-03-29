@@ -15,7 +15,7 @@ class Tops extends React.Component {
 
         
         let tops = this.props.items.filter(i => i.item_type === 'shirt')
-        console.log('[ACCESSORIES]', tops)
+        // console.log('[ACCESSORIES]', tops)
 
 
         return(<div>

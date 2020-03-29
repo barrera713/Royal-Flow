@@ -15,7 +15,7 @@ class Accessories extends React.Component {
 
         
         let accessories = this.props.items.filter(i => i.item_type === 'accessories')
-        console.log('[ACCESSORIES]', accessories)
+        // console.log('[ACCESSORIES]', accessories)
 
 
         return(<div>

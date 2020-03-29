@@ -55,6 +55,7 @@ const ItemCard = (props) => {
                 </div>
                 <div className="star-rating">
                 <StarRatingComponent 
+                            name=""
                             value={aveverageRating} 
                             starCount={5} 
                             editing={false}
