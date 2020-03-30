@@ -3,9 +3,7 @@ dotenv.config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-app.use(cors({
-    credentials: true,
-}));
+app.use(cors());
 const bodyParser = require('body-parser');
 
 const User = require('./models/User');
@@ -20,6 +18,19 @@ const reviewRoute = require('./routes/review');
 const cartItem = require('./routes/cartItems');
 const verifyAuth = require('./verifyToken');
 const stripeRoute = require('./routes/stripe');
+
+
+app.options("/*", function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    res.sendStatus(200);
+});
+
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
 
 
 

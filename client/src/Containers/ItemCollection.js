@@ -23,7 +23,11 @@ class ItemCollection extends React.Component {
   render() {
 
     if(this.props.items === undefined) {
-      return <h3>Loading...</h3>
+      return <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
     }
     
     // console.log('[ITEMS] props', this.props.items)
