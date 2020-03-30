@@ -1,7 +1,7 @@
 import { ADDITEM, INCREMENT, DECREMENT, REMOVEITEM, CARTCOUNT, NEWORDER } from './Types';
 import axios from 'axios';
 
-const URL = 'http://localhost:5000';
+const URL = 'https://royal-flow.herokuapp.com';
 
 export const addItem = (item) => (dispatch) => {
     dispatch({ 

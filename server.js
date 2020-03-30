@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 const db = require('./config/database');
+const dotenv = require('dotenv');
+dotenv.config();
 const User = require('./models/User');
 const Item = require('./models/Item');
 const Cart = require('./models/Cart');
@@ -17,7 +18,6 @@ const verifyAuth = require('./verifyToken');
 const stripeRoute = require('./routes/stripe');
 
 
-dotenv.config();
 
 
 const app = express();

@@ -3,7 +3,7 @@ import axios from 'axios';
 import history from '../history';
 
 
-const URL = 'http://localhost:5000';
+const URL = 'https://royal-flow.herokuapp.com';
 //------------------------------- GET all reviews for an item ---------------------------------------
 export const getItemReviews = (id) => {
     return async (dispatch) => { 

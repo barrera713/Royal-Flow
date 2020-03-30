@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom';
 
 
 function OrderDetails(props) {
-    console.log('PROPS IN ORDER DETAILS', props.details)
+    // console.log('PROPS IN ORDER DETAILS', props.details)
   
     return(<div>
         {props.details.map(item => {

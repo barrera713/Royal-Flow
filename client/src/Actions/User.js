@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:5000';
+const URL = 'https://royal-flow.herokuapp.com';
 
 // -------------------- Create User Post Request --------------------
 export const createUser = async (formData) => {

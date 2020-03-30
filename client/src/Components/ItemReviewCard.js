@@ -13,7 +13,7 @@ class ItemReviewCard extends React.Component {
 
     
     onStarClick = (nextValue, prevValue) => {
-        console.log('[onStarClick]', nextValue)
+        // console.log('[onStarClick]', nextValue)
         this.setState({
             rating: nextValue
         })

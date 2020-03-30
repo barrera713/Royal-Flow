@@ -16,7 +16,7 @@ class Cart extends React.Component{
         const userLoggedIn = sessionStorage.getItem('Bearer');
 
         
-        console.log('CART DATA', this.props.cart)
+        // console.log('CART DATA', this.props.cart)
         // ---------------- Render LoggedOutCart if token is not available------------------------------------------------------
         if(!userLoggedIn) {
         return(<LoggedOutCart />)
@@ -25,7 +25,7 @@ class Cart extends React.Component{
         //----------------------------- function to multiply each item's price by it's quantity  ------------------------------
         let eachItemTotal = this.props.cart.map(i => i.price * i.quantity)
         //-------------------------- returns array of total price for each item ---------------------------------------------------------------------
-        console.log('eachItemTotal', eachItemTotal)
+        // console.log('eachItemTotal', eachItemTotal)
         
         //------------------------------------- if else function to join array total depending on the length of array  ------------------------------------------------------------
         const getGranTotal = (arr) => {
@@ -42,7 +42,7 @@ class Cart extends React.Component{
         }
 
         let cartTotal = getGranTotal(eachItemTotal);
-        console.log('TOTALLL', cartTotal)
+        // console.log('TOTALLL', cartTotal)
 
         let totalItems = this.props.cart.length;
 

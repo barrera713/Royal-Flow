@@ -6,7 +6,7 @@ import { incrementItem, decrementItem, removeItem } from '../Actions/ActiveCart'
 const CartItem = (props) => {
 
     const { item } = props;
-    console.log('PROOOOPPSSSSSS', )
+    // console.log('PROOOOPPSSSSSS', )
 
     const handleIncrement = (item) => {
         // console.log('ADDD COUNT INSIDE TESTING', item)
@@ -19,7 +19,7 @@ const CartItem = (props) => {
     }
 
     const handleRemove = (item) => {
-        console.log('INSIDE REMOVE')
+        // console.log('INSIDE REMOVE')
         props.removeItem(item)
     }
 

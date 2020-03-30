@@ -11,7 +11,7 @@ class ItemReviews extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        console.log('COMPONENT DID MOUNT: ITEM', this.props.location.state.item)
+        // console.log('COMPONENT DID MOUNT: ITEM', this.props.location.state.item)
         // ----------------- Get itemId from "this.props.location.state" passed from Link tag inside ItemCard  ----------------------
         this.props.getItemReviews(this.props.location.state.item)
     }
@@ -19,7 +19,7 @@ class ItemReviews extends React.Component {
     render() {
 
 
-        console.log('REVIEWS: inside ItemReview', this.props.item)
+        // console.log('REVIEWS: inside ItemReview', this.props.item)
         
         return(<div className="reviewpage-container">
                 <ItemReviewCard item={this.props.item}/>

@@ -12,7 +12,7 @@ function ReviewCard(props) {
     console.log('user form storage', activeUser)
     
     const handleDelete = (id) => {
-        console.log('inside function', id)
+        // console.log('inside function', id)
         props.deleteReview(id)
     }
 
