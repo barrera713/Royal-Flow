@@ -1,8 +1,8 @@
 import { ALLDATA } from './Types';
 import axios from 'axios';
 
-const URL = "https://royal-flow.herokuapp.com";
-
+// const URL = "https://royal-flow.herokuapp.com";
+const URL = "http://localhost:5000";
 
 export const getAllItems = () => {
     return async (dispatch) => {

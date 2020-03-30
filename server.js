@@ -3,9 +3,21 @@ dotenv.config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-app.use(cors());
-app.options('*', cors());
+// app.use(cors());
+// app.options('*', cors());
+
+app.use(cors({
+    origin: [
+    'http://localhost:3001',
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}))
+
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 const User = require('./models/User');
 const Item = require('./models/Item');
@@ -24,8 +36,6 @@ const stripeRoute = require('./routes/stripe');
 
 const db = require('./config/database');
 
-// app.use(bodyParser.json());
-app.use(express.json());
 
 
 
@@ -45,13 +55,6 @@ Item.belongsToMany(User, { through: Review, as: 'itemReviews', foreignKey: 'item
 
 
 // db.sync({ force: true });
-
-app.all('*', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
 
 
 //---------------------------------------Route Middleware --------------------------------------------
