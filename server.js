@@ -1,3 +1,13 @@
+const dotenv = require('dotenv');
+dotenv.config();
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors({
+    credentials: true,
+}));
+const bodyParser = require('body-parser');
+
 const User = require('./models/User');
 const Item = require('./models/Item');
 const Cart = require('./models/Cart');
@@ -12,13 +22,6 @@ const verifyAuth = require('./verifyToken');
 const stripeRoute = require('./routes/stripe');
 
 
-const express = require('express');
-const dotenv = require('dotenv');
-dotenv.config();
-const app = express();
-const cors = require('cors');
-app.use(cors());
-const bodyParser = require('body-parser');
 
 const db = require('./config/database');
 
