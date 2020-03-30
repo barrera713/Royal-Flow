@@ -1,9 +1,3 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const db = require('./config/database');
-const dotenv = require('dotenv');
-dotenv.config();
 const User = require('./models/User');
 const Item = require('./models/Item');
 const Cart = require('./models/Cart');
@@ -18,13 +12,28 @@ const verifyAuth = require('./verifyToken');
 const stripeRoute = require('./routes/stripe');
 
 
-
-
+const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
-app.use(bodyParser.json());
+const cors = require('cors');
+app.use(cors());
+const bodyParser = require('body-parser');
+
+const db = require('./config/database');
+
+// app.use(bodyParser.json());
+app.use(express.json());
 
 
-// -------------------------------------- Test Database Connection---------------------------------
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
+// -------------------------------------- Test Database Connection------------------------------------
 db.authenticate()
 .then(() => console.log('Database is connected...'))
 .catch(err => console.log('Error', err));
@@ -43,7 +52,6 @@ Item.belongsToMany(User, { through: Review, as: 'itemReviews', foreignKey: 'item
 
 
 //---------------------------------------Route Middleware --------------------------------------------
-app.use(cors());
 app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', verifyAuth, cartRoute);
