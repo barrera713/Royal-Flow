@@ -32,6 +32,8 @@ exports.getAllItems = async (req, res, next) => {
                 as: 'itemReviews'
             }]
         })
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.status(200).json(items)
     } catch(err)  {
         if(err) return res.status(400).send('ERROR', err)
