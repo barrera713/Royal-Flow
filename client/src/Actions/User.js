@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://royal-flow.herokuapp.com';
+const URL = "https://cryptic-peak-71800.herokuapp.com";
 
 // -------------------- Create User Post Request --------------------
 export const createUser = async (formData) => {

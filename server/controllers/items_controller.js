@@ -17,7 +17,7 @@ exports.postAddItem = async (req, res, next) => {
         const savedItem = await newItem.save();
         res.send({ savedItem });
     } catch (err) {
-        res.status(400).send(err)
+       if(err) res.status(400).send('[ERROR]', err)
     }
 };
 
@@ -33,8 +33,8 @@ exports.getAllItems = async (req, res, next) => {
             }]
         })
         res.status(200).json(items)
-    } catch(err)  {
-        if(err) return res.status(400).send('ERROR', err)
+    } catch(err) {
+        res.status(400).send(err)
     }
 };
 

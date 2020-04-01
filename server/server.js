@@ -1,14 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
+// const { Client } = require('pg');
 const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors());
-app.options(cors());
+app.options('*', cors());
+const db = require('./config/database');
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 
 const User = require('./models/User');
@@ -26,10 +25,11 @@ const stripeRoute = require('./routes/stripe');
 
 
 
-const db = require('./config/database');
+
+app.use(express.json());
 
 
-
+// db.sync();
 
 // -------------------------------------- Test Database Connection------------------------------------
 db.authenticate()
@@ -46,7 +46,6 @@ User.belongsToMany(Item, { through: Review, as: 'userReviews', foreignKey: 'user
 Item.belongsToMany(User, { through: Review, as: 'itemReviews', foreignKey: 'itemId', otherKey: 'userId'});
 
 
-// db.sync({ force: true });
 
 
 //---------------------------------------Route Middleware --------------------------------------------
