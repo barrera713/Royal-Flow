@@ -28,16 +28,16 @@ const stripeRoute = require('./routes/stripe');
 
 app.use(express.json());
 
+/// last deploy was run with line 32 commented out
+// db.sync({ force: true });
 
-// db.sync();
-
-// -------------------------------------- Test Database Connection------------------------------------
+// -------------------------------------- Test Database Connection-------------------------------------
 db.authenticate()
 .then(() => console.log('Database is connected...'))
 .catch(err => console.log('Error', err));
 
 
-//---------------------------------------- Sync Database Models-------------------------------------
+//---------------------------------------- Sync Database Models-----------------------------------------
 User.hasMany(Cart, {foreignKey: 'userId' });
 Cart.belongsTo(User, { constraints: true, onDelete: 'CASCADE'});
 Cart.belongsToMany(Item, { through: CartItem, as: 'items', foreignKey: 'cartId', otherKey: 'itemId'});
@@ -48,7 +48,7 @@ Item.belongsToMany(User, { through: Review, as: 'itemReviews', foreignKey: 'item
 
 
 
-//---------------------------------------Route Middleware --------------------------------------------
+//--------------------------------------- Route Middleware --------------------------------------------
 app.use('/user', userRoute);
 app.use('/shop', itemRoute);
 app.use('/cart', verifyAuth, cartRoute);

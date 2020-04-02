@@ -10,7 +10,7 @@ const Payment = (props) => {
 
     const makePayment = (token) => {
         // const body = { token }
-        const URL = 'http://localhost:5000';
+        const URL = "https://cryptic-peak-71800.herokuapp.com";
         return axios({
             method: 'post',
             url: `${URL}/stripe/payment`,

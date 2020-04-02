@@ -18,7 +18,7 @@ class HottestReleases extends React.Component {
 
 
         
-        let hottesReleases = this.props.items.filter(i => i.price >= 195)
+        let hottesReleases = this.props.items.filter(i => i.price > 195)
         // console.log('[BEST DEALS]', hottesReleases)
 
 

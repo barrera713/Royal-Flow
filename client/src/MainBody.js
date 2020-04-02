@@ -21,7 +21,7 @@ class MainBody extends React.Component {
                 <div className="statement">
                     <ul>
                         <li>
-                            <p>Shop Sneakers Shirts, and Accessories</p>
+                            <p>Shop Sneakers, Shirts, and Accessories</p>
                         </li>
                         <li>
                             <p>Quality is Our Name</p>

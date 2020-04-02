@@ -51,7 +51,7 @@ const ItemCard = (props) => {
             <div className="item-flex-container">
                 <div className="card-body">
                 <p className="card-text">{item.description}</p>
-                {item.size ? <p>Size {item.size} | ${item.price}</p> : <p>Price ${item.price}</p>}
+                {item.size ? <p>Size {item.size} | $ {item.price}</p> : <p>$ {item.price}</p>}
                 </div>
                 <div className="star-rating">
                 <StarRatingComponent 

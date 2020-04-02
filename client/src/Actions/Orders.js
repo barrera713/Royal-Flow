@@ -1,7 +1,7 @@
 import { ALLORDERS, ORDERDETAILS } from './Types';
 import axios from 'axios';
 
-const URL = 'https://royal-flow.herokuapp.com';
+const URL = "https://cryptic-peak-71800.herokuapp.com";
 
 export const getUserOrders = () => {
     return async (dispatch) => { 

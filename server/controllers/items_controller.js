@@ -38,3 +38,18 @@ exports.getAllItems = async (req, res, next) => {
     }
 };
 
+
+exports.deleteItem = async (req, res, next) => {
+    try {
+        Item.findAll({
+            where: { id: req.params.id }
+        })
+        .then(data => {
+            data.destroy();
+            res.status(200).send('Item has been deleted.') 
+        })
+    }
+    catch (err) {
+        console.log('ERROR:', err)
+    }
+}

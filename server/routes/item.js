@@ -7,5 +7,7 @@ router.post('/add-item', items_controller.postAddItem);
 
 router.get('/all-items', items_controller.getAllItems);
 
+router.delete('/delete/:id', items_controller.deleteItem);
+
 
 module.exports = router;
