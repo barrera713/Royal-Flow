@@ -7,7 +7,9 @@ export const createUser = async (formData) => {
     try {
         await axios.post(`${URL}/user/new`, formData,
         {headers: {'Accept': 'application/json'}})
-        .then( window.location = '/login')
+        .then( 
+        window.alert('Redirecting to login'),
+        window.location = '/login')
     } catch (err) {
         console.log(err)
     }
