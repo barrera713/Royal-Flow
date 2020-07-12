@@ -25,15 +25,11 @@ https://devcarlos.io/
 To run this project, install it locally using npm:
 
 In the project directory, you can run:
-'''
-$ npm install
-$ npm run dev
-```
+```npm install ```
+```npm run dev```
 
 then cd into the client dir to start the frontend
+```cd client```
+```npm install```
+```npm start```
 
-```
-$ cd client
-$ npm install
-$ npm start
-```
