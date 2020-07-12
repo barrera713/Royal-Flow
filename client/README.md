@@ -3,13 +3,13 @@ Royal Flow is an ecommerce wep app that allows users to shop for shirts, sneaker
 
 ## Technologies
 Project is created with:
-React
-Bootstrap
-Node.js
-JWT Token
-PostgreSQL
-Sequelize
-Stripe (to handle payments)
+1. React
+2. Bootstrap
+3. Node.js
+4. JWT Token
+5. PostgreSQL
+6. Sequelize
+7. Stripe (to handle payments)
 
 ## Deployed Site
 https://royalflow.netlify.app/
